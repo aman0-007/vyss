@@ -11,14 +11,46 @@
     <title>Vivek Yuv Seva Shakti : Student Dashboard</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
   </head>
   <body>
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
+          <div class="layout-content-container flex flex-col w-80 fade-in-left">
             <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-col">
@@ -80,12 +112,12 @@
               </div>
             </div>
           </div>
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome, Arjun</p></div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming Events</h2>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 fade-in-right">
+            <div class="flex flex-wrap justify-between gap-3 p-4" data-aos="fade-up"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome, Arjun</p></div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up" data-aos-delay="100">Upcoming Events</h2>
             <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
               <div class="flex items-stretch p-4 gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60" data-aos="fade-up" data-aos-delay="200">
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuo7BZ2VEZcioHsiOauGWYuurerg19aQJpndM4UJg6npyaBlq9k0GBGYsKwDwDVcIb_XRp9zXg_U9gB6MwiTw6qGHJp1zxoKyg75Go6TUFWyTUMz1AXT6Tve1T0GwROjNRnQnYELNc83rcjU_VUKyXJeAPbpDiMA2YpSlB9eFmKzbspNh7SBZ4KYeN4D0eu18yJrrRlKbOGc6nuqPbstvKEjZix4jp5YaAppPQv_cC8fhQi2DNzMZJOTNcHiEFhtkNe1DkQg70qjTy");'
@@ -95,7 +127,7 @@
                     <p class="text-[#617c89] text-sm font-normal leading-normal">Join us for a community cleanup event this Saturday.</p>
                   </div>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60" data-aos="fade-up" data-aos-delay="300">
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNpQ9wpy9MMGHXbp8dOB6Xfzi3RidDgHXkWsHakxP2AS6TyMuGSXnp5WQNwvt10wQu6buT6Gx9ZRArudx-1hqrJWeac3jWZCsXLx9EbIV420qWlaAiWKw1HfZpanq4zhCRuN_04u9-Axo_ZC8mAHvBl8yzqtxXEzRWi5W3VGQhc_lpWJ-TvKB_qI1WAM0AbCW6y9SjlbDhmDCcBBq6F7UDqw6xbklhMp88vYH_nD31054zy5j6MuUY8AEQrGt5deGYw7EJBghuJfxK");'
@@ -105,7 +137,7 @@
                     <p class="text-[#617c89] text-sm font-normal leading-normal">Help us plant trees and make our city greener.</p>
                   </div>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60" data-aos="fade-up" data-aos-delay="400">
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjbi7LSdX9IJeje3CvTX5lHc0JCqVNwPymCzAYoQ2DX7BS6ZSWjWvdJ9KbjPRdZEL47kzAsVi1hR0TOTnBKZsaC-tlH8y86nmPULWOFrBD4LdGL6SbHMKqqsqpEF3jOxZ7Z6EpRFQ45KhUA2W7nWmx-n1aU6NAbdedB2M3ehmgn85QqWE2Oqk98oPTeF-NJgLICMqlNtBnBl9w8RicPOfDUqzfWSzqettdEPRjcL4BqG4TDbKPrdXYru3UrE2TEF4-2F0AT-wHaq-0");'
@@ -117,9 +149,9 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Past Events</h2>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Past Events</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3" data-aos="fade-up" data-aos-delay="100">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMJzoojThlub-ar6eTs9ObpHvqwBN23BwUA9ZMmq6crveDjOItZ1yabZehlOqOASPM60gyZ_BXS9VKj1AGD2E0dgzpXwU-bxNEcKMyOy_1nJad6wdKADhOtDH1QPFf1EPIswSjt2OBCIDAuzhDs9AQi79BH5Eft_y3M2UKRlcxZWkzK5En9ULVzXZl83MtfH1EJT3ilDWvwlAsKSfFAbOUkk77RwvLw5wZPgG471hG3prgwloF3CLkMJdIO3IfRjsJ0JKg6ENgFZIV");'
@@ -129,7 +161,7 @@
                   <p class="text-[#617c89] text-sm font-normal leading-normal">Photos from our Diwali celebration.</p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3" data-aos="fade-up" data-aos-delay="200">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkwd2U5Xh8Qt29z6nhqVFzM_1zO2Fw5qJRMGxZsO-200qz9L2uKbxnamRsAcA5qEWvnnk-XRqca-Ff8Al9BBmTITH_nwFPxVhyaK2wpLJiZLTv1Plv0l1FGCHXnhHdzc3QqWxcniupOlbVuNk27vcehXVaduGVJo0ojuFKB789djk1vFRDuymky4RcY2gQlZTyvn-ToG9VHOOyFEtlmJ3QceVj7V6TUBEwyUsPGJl7n_BWXjhrHltGqB8XmpYwsAUhPbi8vUZgx9yi");'
@@ -139,7 +171,7 @@
                   <p class="text-[#617c89] text-sm font-normal leading-normal">Highlights from our Independence Day event.</p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3" data-aos="fade-up" data-aos-delay="300">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1xRjzjFaFoy6_uW5zlQ7O47pusU0-Q1cswgnmTX3-XEyr85yfn1niMvf6yw0F8iFmmSdDVkILxz6boC_c_bxCShMiK8ySnwVRG4AA7qaxCPsuJx_V_dCfQ6pTQPjjAAhMKLVBWP5l9YP6Jt-NJb4eX3P5X22MQYATn9rePoX4mls1nBcPtjUQFXQJJcjq_zgyp6KLbPEKTLV9RtC-jmEy1pWYM1ypQXi-Q908pukzwa5s734J__c0Xoz-A4p5hJGVSOqcEjkef1SM");'
@@ -150,8 +182,8 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Attendance</h2>
-            <div class="px-4 py-3 @container">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Attendance</h2>
+            <div class="px-4 py-3 @container" data-aos="fade-up" data-aos-delay="100">
               <div class="flex overflow-hidden rounded-lg border border-[#dbe2e6] bg-white">
                 <table class="flex-1">
                   <thead>
@@ -220,5 +252,14 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
   </body>
 </html>
