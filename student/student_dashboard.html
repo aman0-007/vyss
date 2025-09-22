@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Vivek Yuv Seva Shakti : Student Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col">
+                  <h1 class="text-[#111618] text-base font-medium leading-normal">Vivek Yuv Seva Shakti</h1>
+                  <p class="text-[#617c89] text-sm font-normal leading-normal">Student Dashboard</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <a href="student_dashboard.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#f0f3f4]">
+                    <div class="text-[#111618]" data-icon="House" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Dashboard</p>
+                  </a>
+                  <a href="student_events_page.html" class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="Calendar" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Events</p>
+                  </a>
+                  <a href="student_attendance_page.html" class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="CheckSquare" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Attendance</p>
+                  </a>
+                  <a href="student_profile_page.html" class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="User" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Profile</p>
+                  </a>
+                  <a href="student_settings_page.html" class="flex items-center gap-3 px-3 py-2">
+                    <div class="text-[#111618]" data-icon="Gear" data-size="24px" data-weight="regular">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#111618] text-sm font-medium leading-normal">Settings</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Welcome, Arjun</p></div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Upcoming Events</h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+              <div class="flex items-stretch p-4 gap-3">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuo7BZ2VEZcioHsiOauGWYuurerg19aQJpndM4UJg6npyaBlq9k0GBGYsKwDwDVcIb_XRp9zXg_U9gB6MwiTw6qGHJp1zxoKyg75Go6TUFWyTUMz1AXT6Tve1T0GwROjNRnQnYELNc83rcjU_VUKyXJeAPbpDiMA2YpSlB9eFmKzbspNh7SBZ4KYeN4D0eu18yJrrRlKbOGc6nuqPbstvKEjZix4jp5YaAppPQv_cC8fhQi2DNzMZJOTNcHiEFhtkNe1DkQg70qjTy");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Community Cleanup</p>
+                    <p class="text-[#617c89] text-sm font-normal leading-normal">Join us for a community cleanup event this Saturday.</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNpQ9wpy9MMGHXbp8dOB6Xfzi3RidDgHXkWsHakxP2AS6TyMuGSXnp5WQNwvt10wQu6buT6Gx9ZRArudx-1hqrJWeac3jWZCsXLx9EbIV420qWlaAiWKw1HfZpanq4zhCRuN_04u9-Axo_ZC8mAHvBl8yzqtxXEzRWi5W3VGQhc_lpWJ-TvKB_qI1WAM0AbCW6y9SjlbDhmDCcBBq6F7UDqw6xbklhMp88vYH_nD31054zy5j6MuUY8AEQrGt5deGYw7EJBghuJfxK");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Tree Planting Drive</p>
+                    <p class="text-[#617c89] text-sm font-normal leading-normal">Help us plant trees and make our city greener.</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjbi7LSdX9IJeje3CvTX5lHc0JCqVNwPymCzAYoQ2DX7BS6ZSWjWvdJ9KbjPRdZEL47kzAsVi1hR0TOTnBKZsaC-tlH8y86nmPULWOFrBD4LdGL6SbHMKqqsqpEF3jOxZ7Z6EpRFQ45KhUA2W7nWmx-n1aU6NAbdedB2M3ehmgn85QqWE2Oqk98oPTeF-NJgLICMqlNtBnBl9w8RicPOfDUqzfWSzqettdEPRjcL4BqG4TDbKPrdXYru3UrE2TEF4-2F0AT-wHaq-0");'
+                  ></div>
+                  <div>
+                    <p class="text-[#111618] text-base font-medium leading-normal">Park Restoration</p>
+                    <p class="text-[#617c89] text-sm font-normal leading-normal">Participate in restoring our local park.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Past Events</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMJzoojThlub-ar6eTs9ObpHvqwBN23BwUA9ZMmq6crveDjOItZ1yabZehlOqOASPM60gyZ_BXS9VKj1AGD2E0dgzpXwU-bxNEcKMyOy_1nJad6wdKADhOtDH1QPFf1EPIswSjt2OBCIDAuzhDs9AQi79BH5Eft_y3M2UKRlcxZWkzK5En9ULVzXZl83MtfH1EJT3ilDWvwlAsKSfFAbOUkk77RwvLw5wZPgG471hG3prgwloF3CLkMJdIO3IfRjsJ0JKg6ENgFZIV");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Diwali Celebration</p>
+                  <p class="text-[#617c89] text-sm font-normal leading-normal">Photos from our Diwali celebration.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkwd2U5Xh8Qt29z6nhqVFzM_1zO2Fw5qJRMGxZsO-200qz9L2uKbxnamRsAcA5qEWvnnk-XRqca-Ff8Al9BBmTITH_nwFPxVhyaK2wpLJiZLTv1Plv0l1FGCHXnhHdzc3QqWxcniupOlbVuNk27vcehXVaduGVJo0ojuFKB789djk1vFRDuymky4RcY2gQlZTyvn-ToG9VHOOyFEtlmJ3QceVj7V6TUBEwyUsPGJl7n_BWXjhrHltGqB8XmpYwsAUhPbi8vUZgx9yi");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Independence Day Event</p>
+                  <p class="text-[#617c89] text-sm font-normal leading-normal">Highlights from our Independence Day event.</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1xRjzjFaFoy6_uW5zlQ7O47pusU0-Q1cswgnmTX3-XEyr85yfn1niMvf6yw0F8iFmmSdDVkILxz6boC_c_bxCShMiK8ySnwVRG4AA7qaxCPsuJx_V_dCfQ6pTQPjjAAhMKLVBWP5l9YP6Jt-NJb4eX3P5X22MQYATn9rePoX4mls1nBcPtjUQFXQJJcjq_zgyp6KLbPEKTLV9RtC-jmEy1pWYM1ypQXi-Q908pukzwa5s734J__c0Xoz-A4p5hJGVSOqcEjkef1SM");'
+                ></div>
+                <div>
+                  <p class="text-[#111618] text-base font-medium leading-normal">Annual Charity Run</p>
+                  <p class="text-[#617c89] text-sm font-normal leading-normal">Results and photos from the annual charity run.</p>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Attendance</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#dbe2e6] bg-white">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-white">
+                      <th class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-120 px-4 py-3 text-left text-[#111618] w-[400px] text-sm font-medium leading-normal">Event</th>
+                      <th class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-240 px-4 py-3 text-left text-[#111618] w-[400px] text-sm font-medium leading-normal">Date</th>
+                      <th class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-360 px-4 py-3 text-left text-[#111618] w-60 text-sm font-medium leading-normal">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#dbe2e6]">
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">
+                        Community Cleanup
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617c89] text-sm font-normal leading-normal">
+                        2024-07-20
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-360 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#f0f3f4] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Attended</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe2e6]">
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">
+                        Tree Planting Drive
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617c89] text-sm font-normal leading-normal">
+                        2024-07-15
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-360 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#f0f3f4] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Attended</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#dbe2e6]">
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111618] text-sm font-normal leading-normal">
+                        Park Restoration
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-240 h-[72px] px-4 py-2 w-[400px] text-[#617c89] text-sm font-normal leading-normal">
+                        2024-07-10
+                      </td>
+                      <td class="table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-360 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                        <button
+                          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 bg-[#f0f3f4] text-[#111618] text-sm font-medium leading-normal w-full"
+                        >
+                          <span class="truncate">Absent</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-120{display: none;}}
+                @container(max-width:240px){.table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-240{display: none;}}
+                @container(max-width:360px){.table-2603ceb6-15c1-4e27-9c5e-e81cf5cfa81b-column-360{display: none;}}
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

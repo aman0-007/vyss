@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
+<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+<link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: "#FF6B6B",
+                            hover: "#FF4D4D"
+                        },
+                        secondary: "#4ECDC4",
+                        accent: "#FFE66D",
+                        background: {
+                            light: "#F7FFF7",
+                            dark: "#1A202C"
+                        },
+                        text: {
+                            light: "#1A202C",
+                            dark: "#E2E8F0"
+                        },
+                        "secondary-light": "#FFFFFF",
+                        "secondary-dark": "#2D3748",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="flex h-screen bg-background-light dark:bg-background-dark">
+<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg">
+<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
+<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
+</div>
+<nav class="mt-6">
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
+<span class="material-symbols-outlined mr-4">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_manage_events.html">
+<span class="material-symbols-outlined mr-4">event</span>
+<span>Manage Events</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
+<span class="material-symbols-outlined mr-4">photo_library</span>
+<span>Photo Gallery</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
+<span class="material-symbols-outlined mr-4">co_present</span>
+<span>Attendance</span>
+</a>
+<a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_student_registerations.html">
+<span class="material-symbols-outlined mr-4">group</span>
+<span>Student Registrations</span>
+</a>
+</nav>
+<div class="absolute bottom-0 w-64 p-6">
+<a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
+<span class="material-symbols-outlined mr-4">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col overflow-hidden">
+<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark">
+<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark">Student Registrations</h1>
+<div class="flex items-center space-x-4">
+<span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
+<img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
+</div>
+</header>
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6">
+<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md mb-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="search-student">Search
+                                Student</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark pl-10 focus:border-primary-DEFAULT focus:ring-primary-DEFAULT" id="search-student" name="search-student" placeholder="Search by name, email or ID" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="event-filter">Filter by
+                                Event</label>
+<select class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:border-primary-DEFAULT focus:ring-primary-DEFAULT" id="event-filter" name="event-filter">
+<option>All Events</option>
+<option>Tree Plantation Drive</option>
+<option>Youth Leadership Workshop</option>
+<option>Blood Donation Camp</option>
+<option>Career Guidance Seminar</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="status-filter">Filter by
+                                Status</label>
+<select class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:border-primary-DEFAULT focus:ring-primary-DEFAULT" id="status-filter" name="status-filter">
+<option>All Statuses</option>
+<option>Approved</option>
+<option>Pending</option>
+<option>Rejected</option>
+</select>
+</div>
+</div>
+</div>
+<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md">
+<div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+<div>
+<h2 class="text-xl font-semibold text-text-light dark:text-white">All Registered Students
+                            </h2>
+<p class="text-sm text-gray-500 dark:text-gray-400">Showing 1-10 of 150 students</p>
+</div>
+<button class="bg-primary-hover text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined mr-2 text-base">person_add</span>
+                            Add New Student
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Student Name</th>
+<th class="px-6 py-3" scope="col">Registration ID</th>
+<th class="px-6 py-3" scope="col">Registered For</th>
+<th class="px-6 py-3 text-center" scope="col">Status</th>
+<th class="px-6 py-3 text-center" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b dark:bg-secondary-dark dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Rohan Sharma</td>
+<td class="px-6 py-4">VYSS-2024-001</td>
+<td class="px-6 py-4">Career Guidance Seminar</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approved</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-secondary-dark dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Priya Patel</td>
+<td class="px-6 py-4">VYSS-2024-002</td>
+<td class="px-6 py-4">Tree Plantation Drive</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100">Pending</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-secondary-dark dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Amit Singh</td>
+<td class="px-6 py-4">VYSS-2024-003</td>
+<td class="px-6 py-4">Blood Donation Camp</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approved</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-secondary-dark dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Anjali Gupta</td>
+<td class="px-6 py-4">VYSS-2024-004</td>
+<td class="px-6 py-4">Youth Leadership Workshop</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">Rejected</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-secondary-dark dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Vikram Rathod</td>
+<td class="px-6 py-4">VYSS-2024-005</td>
+<td class="px-6 py-4">Career Guidance Seminar</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approved</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-secondary-dark hover:bg-gray-50 dark:hover:bg-gray-600">
+<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Sunita Kumar</td>
+<td class="px-6 py-4">VYSS-2024-006</td>
+<td class="px-6 py-4">Tree Plantation Drive</td>
+<td class="px-6 py-4 text-center">
+<span class="px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full dark:bg-yellow-700 dark:text-yellow-100">Pending</span>
+</td>
+<td class="px-6 py-4 text-center space-x-2">
+<button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined text-xl">visibility</span></button>
+<button class="text-blue-500 hover:text-blue-700"><span class="material-symbols-outlined text-xl">edit</span></button>
+<button class="text-red-500 hover:text-red-700"><span class="material-symbols-outlined text-xl">delete</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+<nav aria-label="Page navigation">
+<ul class="inline-flex items-center -space-x-px">
+<li>
+<a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">Previous</a>
+</li>
+<li>
+<a aria-current="page" class="z-10 px-3 py-2 leading-tight text-primary-DEFAULT bg-primary-DEFAULT/10 border border-primary-DEFAULT hover:bg-primary-DEFAULT/20 dark:bg-gray-700 dark:text-white" href="#">1</a>
+</li>
+<li>
+<a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">2</a>
+</li>
+<li>
+<a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">3</a>
+</li>
+<li>
+<a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vivek Yuv Seva Shakti : Student Login</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    :root {
+      --primary: #FF6B6B;
+      --primary-hover: #FF4D4D;
+      --secondary: #4ECDC4;
+      --accent: #FFE66D;
+      --background-light: #F7FFF7;
+      --background-dark: #1A202C;
+      --text-light: #1A202C;
+      --text-dark: #E2E8F0;
+      --secondary-light: #FFFFFF;
+      --secondary-dark: #2D3748;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .glassmorphic {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .dark .glassmorphic {
+      background: rgba(26, 32, 44, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArbb88nV5T1BwWK5XQ5mnt3EMKZtBtG37WeIZXRwM1JS_df-la6hQKwyTITyKo1bKxkvSkD5URo0bp4dMJp5kfzERlIZCcEnWJiN6iItyXZb5tzOI1XEdiSLoRCvgXshngj1ZTYuJ4ICcmwbF7AY0XE9sRGsZA9-Mz3gukAqnkMOswiTybhfCuJRw0BiVbWEUY44N5Q1Zd5gmhFF7iMmHgpnuRnkGjztrReJSDv6NIszUE7LfuY7lC4KigQHSVpdVdGyts3t2OJAp_');">
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 w-full max-w-md p-8 space-y-8 glassmorphic rounded-2xl mx-4">
+<div class="text-center">
+<img alt="Vivek Yuv Seva Shakti Logo" class="mx-auto h-20 w-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE1TcYNmqGUvcxwy8vQGD4u-092ufNXb3vlANGbS1Mc604Cetk6N8TvHg3Zu3raaa9V_73M8_c9tgvBi5PixPxl5d5azkZIc5yxPlRpQ5H0ZMcEZ621_2TcJDtxAwHUrALr-U4GeTvdOl4gc2-KjLy3DGJmYrhNW4pOurtu6kLKveRGDwEGiI_AMqwS0-FVjOrxWKp2TFoKFPkyyypRf_DO001yMYPvN7nstzj2PWxt3A3OID2Z7A2xHWIZ71Ca_U7l0MnyAJth7PP"/>
+<h1 class="text-3xl font-bold text-white">Student Login</h1>
+<p class="text-gray-300 mt-2">Welcome back, future leaders!</p>
+</div>
+<form action="student_dashboard.html" class="space-y-6" method="POST">
+<div>
+<label class="sr-only" for="student-id">Username/Student ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              person
+            </span>
+<input autocomplete="username" class="w-full pl-12 pr-4 py-3 rounded-lg bg-white/20 dark:bg-gray-800/30 text-white border-2 border-transparent focus:border-[var(--primary)] focus:ring-0 placeholder-gray-300 transition duration-300" id="student-id" name="student-id" placeholder="Username / Student ID" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              lock
+            </span>
+<input autocomplete="current-password" class="w-full pl-12 pr-4 py-3 rounded-lg bg-white/20 dark:bg-gray-800/30 text-white border-2 border-transparent focus:border-[var(--primary)] focus:ring-0 placeholder-gray-300 transition duration-300" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+</div>
+<div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-semibold text-white bg-[var(--primary)] hover:bg-[var(--primary-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)] transition-all duration-300 transform hover:scale-105" type="submit">
+            Login
+          </button>
+</div>
+</form>
+</div>
+</div>
+
+</body></html>

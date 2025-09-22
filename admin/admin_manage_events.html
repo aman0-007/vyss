@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
+<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+<link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: "#FF6B6B",
+                            hover: "#FF4D4D"
+                        },
+                        secondary: "#4ECDC4",
+                        accent: "#FFE66D",
+                        background: {
+                            light: "#F7FFF7",
+                            dark: "#1A202C"
+                        },
+                        text: {
+                            light: "#1A202C",
+                            dark: "#E2E8F0"
+                        },
+                        "secondary-light": "#FFFFFF",
+                        "secondary-dark": "#2D3748",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="flex h-screen bg-background-light dark:bg-background-dark">
+<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg">
+<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
+<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
+</div>
+<nav class="mt-6">
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
+<span class="material-symbols-outlined mr-4">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_manage_events.html">
+<span class="material-symbols-outlined mr-4">event</span>
+<span>Manage Events</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
+<span class="material-symbols-outlined mr-4">photo_library</span>
+<span>Photo Gallery</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
+<span class="material-symbols-outlined mr-4">co_present</span>
+<span>Attendance</span>
+</a>
+<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
+<span class="material-symbols-outlined mr-4">group</span>
+<span>Student Registrations</span>
+</a>
+</nav>
+<div class="absolute bottom-0 w-64 p-6">
+<a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
+<span class="material-symbols-outlined mr-4">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col overflow-hidden">
+<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark">
+<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark">Manage Events</h1>
+<div class="flex items-center space-x-4">
+<span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
+<img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
+</div>
+</header>
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6">
+<div class="flex justify-end mb-6">
+<button class="bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+                        Add New Event
+                    </button>
+</div>
+<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white">Existing Events</h2>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+<thead class="bg-gray-50 dark:bg-gray-800">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Event Name</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Date</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Time</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Location</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="bg-secondary-light dark:bg-secondary-dark divide-y divide-gray-200 dark:divide-gray-700">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Tree Plantation Drive</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">July 25, 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">09:00 AM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">City Park</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:text-secondary/80">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="text-primary-DEFAULT hover:text-primary-hover">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Youth Leadership Workshop</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 5, 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">10:30 AM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Community Hall</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:text-secondary/80">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="text-primary-DEFAULT hover:text-primary-hover">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Blood Donation Camp</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 20, 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">08:00 AM - 02:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Red Cross Building</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:text-secondary/80">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="text-primary-DEFAULT hover:text-primary-hover">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Career Guidance Seminar</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">September 10, 2024</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">02:00 PM</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">University Auditorium</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:text-secondary/80">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="text-primary-DEFAULT hover:text-primary-hover">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
