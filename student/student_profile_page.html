@@ -11,15 +11,46 @@
     <title>Vivek Yuv Seva Shakti : Student Profile</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
   </head>
   <body>
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
+          <div class="layout-content-container flex flex-col w-80 fade-in-left">
             <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-col">
@@ -81,10 +112,10 @@
               </div>
             </div>
           </div>
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Profile</p></div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Personal Information</h2>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 fade-in-right">
+            <div class="flex flex-wrap justify-between gap-3 p-4" data-aos="fade-up"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Profile</p></div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up" data-aos-delay="100">Personal Information</h2>
+            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6" data-aos="fade-up" data-aos-delay="200">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe2e6] py-5">
                 <p class="text-[#617c89] text-sm font-normal leading-normal">Full Name</p>
                 <p class="text-[#111618] text-sm font-normal leading-normal">Arjun Sharma</p>
@@ -102,8 +133,8 @@
                 <p class="text-[#111618] text-sm font-normal leading-normal">123 Main Street, Mumbai, India</p>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact Information</h2>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Contact Information</h2>
+            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6" data-aos="fade-up" data-aos-delay="100">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe2e6] py-5">
                 <p class="text-[#617c89] text-sm font-normal leading-normal">Email</p>
                 <p class="text-[#111618] text-sm font-normal leading-normal">arjun.sharma@email.com</p>
@@ -117,8 +148,8 @@
                 <p class="text-[#111618] text-sm font-normal leading-normal">Rohan Sharma (+91 9876500000)</p>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Other Information</h2>
-            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Other Information</h2>
+            <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6" data-aos="fade-up" data-aos-delay="100">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe2e6] py-5">
                 <p class="text-[#617c89] text-sm font-normal leading-normal">Interests</p>
                 <p class="text-[#111618] text-sm font-normal leading-normal">Community Service, Environmental Activities</p>
@@ -128,7 +159,7 @@
                 <p class="text-[#111618] text-sm font-normal leading-normal">Event Management, Communication</p>
               </div>
             </div>
-            <div class="flex px-4 py-3 justify-end">
+            <div class="flex px-4 py-3 justify-end" data-aos="fade-up" data-aos-delay="200">
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
               >
@@ -139,5 +170,14 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
   </body>
 </html>

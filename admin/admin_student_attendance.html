@@ -8,6 +8,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script>
         tailwind.config = {
             darkMode: "class",
@@ -41,10 +42,100 @@
             },
         };
     </script>
+<style>
+        /* On-load animations */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .fade-in-down {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .fade-in-left {
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        .fade-in-right {
+            animation: fadeInRight 1s ease-out;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Smooth transitions for interactive elements */
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+        
+        /* Stagger animation delays */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+    </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
 <div class="flex h-screen bg-background-light dark:bg-background-dark">
-<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg">
+<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
 <div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
 <img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
 </div>
@@ -78,15 +169,15 @@
 </div>
 </aside>
 <div class="flex-1 flex flex-col overflow-hidden">
-<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark">
-<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark">Attendance</h1>
+<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
+<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Attendance</h1>
 <div class="flex items-center space-x-4">
 <span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
 <img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
 </div>
 </header>
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6">
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md mb-6">
+<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
+<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md mb-6" data-aos="fade-up">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div>
 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="event-select">Select Event</label>
@@ -102,31 +193,31 @@
 <input class="w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:border-primary-DEFAULT focus:ring-primary-DEFAULT" id="date-select" name="date-select" type="date" value="2024-09-10"/>
 </div>
 <div class="flex items-end">
-<button class="w-full bg-secondary text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center">
+<button class="w-full bg-secondary text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center smooth-transition">
 <span class="material-symbols-outlined mr-2">search</span>
                                 Load Attendance
                             </button>
 </div>
 </div>
 </div>
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md">
-<div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+<div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center" data-aos="fade-up" data-aos-delay="200">
 <div>
 <h2 class="text-xl font-semibold text-text-light dark:text-white">Career Guidance Seminar - Sep 10, 2024</h2>
 <p class="text-sm text-gray-500 dark:text-gray-400">Total Students: 45 | Present: 42 | Absent: 3</p>
 </div>
 <div class="flex space-x-2">
-<button class="bg-primary-hover text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center">
+<button class="bg-primary-hover text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition">
 <span class="material-symbols-outlined mr-2 text-base">download</span>
                                 Export CSV
                             </button>
-<button class="bg-accent text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-accent/80 transition duration-300 flex items-center justify-center">
+<button class="bg-accent text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-accent/80 transition duration-300 flex items-center justify-center smooth-transition">
 <span class="material-symbols-outlined mr-2 text-base">print</span>
                                 Print Report
                             </button>
 </div>
 </div>
-<div class="overflow-x-auto">
+<div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="300">
 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 <tr>
@@ -233,4 +324,14 @@
 </div>
 </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+    </script>
 </body></html>

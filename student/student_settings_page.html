@@ -11,14 +11,46 @@
     <title>Vivek Yuv Seva Shakti : Student Settings</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
   </head>
   <body>
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
+          <div class="layout-content-container flex flex-col w-80 fade-in-left">
             <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-col">
@@ -80,10 +112,10 @@
               </div>
             </div>
           </div>
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Settings</p></div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">App Preferences</h2>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 fade-in-right">
+            <div class="flex flex-wrap justify-between gap-3 p-4" data-aos="fade-up"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Settings</p></div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up" data-aos-delay="100">App Preferences</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="200">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Theme</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Choose between light and dark mode for the app interface.</p>
@@ -97,15 +129,15 @@
                 </label>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="300">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Language</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Select your preferred language for the app.</p>
               </div>
               <div class="shrink-0"><p class="text-[#111618] text-base font-normal leading-normal">English</p></div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Notifications</h2>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Notifications</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="100">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Event Reminders</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Receive notifications about upcoming events and activities.</p>
@@ -119,7 +151,7 @@
                 </label>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="200">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">General Notifications</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Get notified about important updates and announcements.</p>
@@ -133,15 +165,15 @@
                 </label>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Privacy</h2>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Privacy</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="100">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Profile Visibility</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Control who can see your profile information.</p>
               </div>
               <div class="shrink-0"><p class="text-[#111618] text-base font-normal leading-normal">Public</p></div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="200">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Data Management</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Manage your data and privacy settings.</p>
@@ -154,8 +186,8 @@
                 </button>
               </div>
             </div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Account Security</h2>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up">Account Security</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="100">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Change Password</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Change your account password.</p>
@@ -168,7 +200,7 @@
                 </button>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between" data-aos="fade-up" data-aos-delay="200">
               <div class="flex flex-col justify-center">
                 <p class="text-[#111618] text-base font-medium leading-normal line-clamp-1">Connected Accounts</p>
                 <p class="text-[#617c89] text-sm font-normal leading-normal line-clamp-2">Manage your connected accounts.</p>
@@ -185,5 +217,14 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
   </body>
 </html>

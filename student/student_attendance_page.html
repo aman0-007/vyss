@@ -11,14 +11,46 @@
     <title>Vivek Yuv Seva Shakti : Student Attendance</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
   </head>
   <body>
     <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-80">
+          <div class="layout-content-container flex flex-col w-80 fade-in-left">
             <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-col">
@@ -80,10 +112,10 @@
               </div>
             </div>
           </div>
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Attendance</p></div>
-            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Attendance Summary</h2>
-            <div class="px-4 py-3 @container">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1 fade-in-right">
+            <div class="flex flex-wrap justify-between gap-3 p-4" data-aos="fade-up"><p class="text-[#111618] tracking-light text-[32px] font-bold leading-tight min-w-72">Attendance</p></div>
+            <h2 class="text-[#111618] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-aos="fade-up" data-aos-delay="100">Attendance Summary</h2>
+            <div class="px-4 py-3 @container" data-aos="fade-up" data-aos-delay="200">
               <div class="flex overflow-hidden rounded-lg border border-[#dbe2e6] bg-white">
                 <table class="flex-1">
                   <thead>
@@ -184,5 +216,14 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
   </body>
 </html>

@@ -78,3 +78,51 @@ AOS.init({
 3. `student/student_login.html` - Login page with entrance animations
 
 All animations maintain the existing design integrity while enhancing the user experience with smooth, professional transitions.
+## Files Updated with Animations
+
+### Admin Dashboard Pages
+1. `admin/admin_dashboard.html` - Complete admin dashboard with animations
+2. `admin/admin_manage_events.html` - Event management page with animations  
+3. `admin/admin_event_photo-gallery.html` - Photo gallery page with animations
+4. `admin/admin_student_attendance.html` - Attendance management page with animations
+5. `admin/admin_student_registerations.html` - Student registrations page with animations
+
+### Student Dashboard Pages  
+6. `student/student_events_page.html` - Student events page with animations
+7. `student/student_profile_page.html` - Student profile page with animations
+8. `student/student_settings_page.html` - Student settings page with animations
+9. `student/student_attendance_page.html` - Student attendance page with animations
+
+### Animation Implementation Details
+
+**Admin Pages:**
+- Sidebar: `fade-in-left` on-load animation
+- Header: `fade-in-down` on-load animation  
+- Main content: `fade-in-right` on-load animation
+- Cards and sections: `data-aos="fade-up"` with staggered delays (100ms, 200ms, 300ms, etc.)
+- Interactive buttons: `smooth-transition` class for hover effects
+- Tables and content areas: Scroll-triggered fade-up animations
+
+**Student Pages:**
+- Sidebar: `fade-in-left` on-load animation
+- Main content: `fade-in-right` on-load animation
+- Page titles: `data-aos="fade-up"` 
+- Section headers: `data-aos="fade-up"` with 100ms delay
+- Content sections: `data-aos="fade-up"` with staggered delays (200ms, 300ms, 400ms)
+- Forms and tables: Scroll-triggered fade-up animations
+
+**New Selectors Added:**
+- All admin sidebar elements: `.fade-in-left`
+- All admin headers: `.fade-in-down` 
+- All admin main content areas: `.fade-in-right`
+- All student sidebar elements: `.fade-in-left`
+- All student main content areas: `.fade-in-right`
+- Interactive buttons: `.smooth-transition`
+- Various content sections: `data-aos="fade-up"` with appropriate delays
+
+All animations follow the established specifications:
+- Duration: 800ms
+- Easing: ease-out
+- Trigger: once (animations play only once)
+- Offset: 50-100px for AOS animations
+- Staggered delays: 100ms increments for sequential elements
