@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
-<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
-<link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
+    <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -42,263 +43,193 @@
             },
         };
     </script>
-<style>
+    <style>
         /* On-load animations */
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .fade-in-down {
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-        
-        .scale-in {
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
+        .fade-in-up { animation: fadeInUp 1s ease-out; }
+        .fade-in-down { animation: fadeInDown 1s ease-out; }
+        .fade-in-left { animation: fadeInLeft 1s ease-out; }
+        .fade-in-right { animation: fadeInRight 1s ease-out; }
+        .scale-in { animation: scaleIn 0.8s ease-out; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
         /* Smooth transitions for interactive elements */
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        
-        /* Stagger animation delays */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
+        .smooth-transition { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="flex h-screen bg-background-light dark:bg-background-dark">
-<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
-<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
-<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
-</div>
-<nav class="mt-6">
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
-<span class="material-symbols-outlined mr-4">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_manage_events.html">
-<span class="material-symbols-outlined mr-4">event</span>
-<span>Manage Events</span>
-</a>
-<a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_event_photo-gallery.html">
-<span class="material-symbols-outlined mr-4">photo_library</span>
-<span>Photo Gallery</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
-<span class="material-symbols-outlined mr-4">co_present</span>
-<span>Attendance</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
-<span class="material-symbols-outlined mr-4">group</span>
-<span>Student Registrations</span>
-</a>
-</nav>
-<div class="absolute bottom-0 w-64 p-6">
-<a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
-<span class="material-symbols-outlined mr-4">logout</span>
-<span>Logout</span>
-</a>
-</div>
-</aside>
-<div class="flex-1 flex flex-col overflow-hidden">
-<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
-<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Photo Gallery</h1>
-<div class="flex items-center space-x-4">
-<span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
-<img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
-</div>
-</header>
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
-<div class="flex justify-between items-center mb-6" data-aos="fade-up">
-<h2 class="text-xl font-semibold text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="100">Albums</h2>
-<div class="flex space-x-4">
-<button class="bg-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="200">
-<span class="material-symbols-outlined mr-2">create_new_folder</span>
+    <div class="flex h-screen bg-background-light dark:bg-background-dark">
+        <aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
+            <div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
+                <img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg" />
+            </div>
+            <nav class="mt-6">
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
+                    <span class="material-symbols-outlined mr-4">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_manage_events.html">
+                    <span class="material-symbols-outlined mr-4">event</span>
+                    <span>Manage Events</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_event_photo-gallery.html">
+                    <span class="material-symbols-outlined mr-4">photo_library</span>
+                    <span>Photo Gallery</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
+                    <span class="material-symbols-outlined mr-4">co_present</span>
+                    <span>Attendance</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
+                    <span class="material-symbols-outlined mr-4">group</span>
+                    <span>Student Registrations</span>
+                </a>
+            </nav>
+            <div class="absolute bottom-0 w-64 p-6">
+                <a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
+                    <span class="material-symbols-outlined mr-4">logout</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
+                <h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Photo Gallery</h1>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
+                    <img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB" />
+                </div>
+            </header>
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
+                <div class="flex justify-between items-center mb-6" data-aos="fade-up">
+                    <h2 class="text-xl font-semibold text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="100">Albums</h2>
+                    <div class="flex space-x-4">
+                        <button class="bg-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="200">
+                            <span class="material-symbols-outlined mr-2">create_new_folder</span>
                             Create New Album
                         </button>
-<button class="bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="300">
-<span class="material-symbols-outlined mr-2">upload_file</span>
+                        <button class="bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="300">
+                            <span class="material-symbols-outlined mr-2">upload_file</span>
                             Upload Photos
                         </button>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-<div class="relative">
-<img alt="Album cover for Tree Plantation Drive" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwZ2TobNbgUNBfv70cfw2Z90q_uU9kFMqewiFlxD67qOVFUjpPFWa-Qy8Dcgw_Hc_cyN0ac3vXMf0oCMt72P1Z_HnQNx_3PjtpD6sDYt0GQK7LsYEs5GhwTYK3BDf4htnZeths29rKLeD7LSHtId6v1-6EbvukyNFjS8vtiRwgCmBm_y4Yu2IJ0O3nsmVrlSRm99EW9lLohz0JfNFK3cBGsW7f7Oo3AHfMRHf1Df-wUSjR-0BvpHnEqaijiS2n9exEJqy55DCkHCWA"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-4">
-<button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
-</div>
-</div>
-</div>
-<div class="p-4">
-<h3 class="text-lg font-semibold text-text-light dark:text-white">Tree Plantation Drive</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400">July 25, 2024</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">15 Photos</p>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-<div class="relative">
-<img alt="Album cover for Youth Leadership Workshop" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCFbC9t0XeKAGzAGIQyk8ERc3ENNdaaXax0cstSS_8VaZ4KuI2HYC2vklLFjB2N9AakJeyDGhcD6Xk0ou1N6inEDVFdJ9ilQFwVLOJnu6B2cR_lsToE1dX6ipWgEZtt7ZjX6tlKcGSk2zs-HyVeW7a8jg892ohRy-gm_T39I3vMO3soVdGkruqkDonpiqWfNPO3MCzrCp4uArhaVu5uBH28EpH7oCPCCk9NvI0xxjCFShmMEfHBWXcMtUQ6QNFM1C6LLVxCGfVt5Ry"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-4">
-<button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
-</div>
-</div>
-</div>
-<div class="p-4">
-<h3 class="text-lg font-semibold text-text-light dark:text-white">Youth Leadership Workshop</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400">August 5, 2024</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">22 Photos</p>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-<div class="relative">
-<img alt="Album cover for Blood Donation Camp" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6rTxJC8qyl-Hwa8GCR5uZC8ypIImHo5i5jI7CAddyPfJ8hfzdDV8HTHnCsd-ZXWsRp9rT6LqRbsWOxp4FHAuGsQm-3flkMA8s0byi5YybMROK9Ehe9Aq8gaYyhwZpAWY6WpyAID_t8dv-osFCb-1ytBeFdHqnf0SrqjUDCHLvUuonLAQ5vlZBfx2Ykg5UUiNMVtGng3kRmDJea6n0nE6xEqbkJVjxrfkwGNVEVwIOoGNWqCzFIZ6wn7L4wWu8PhDz2sP_6WiTWmgm"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-4">
-<button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
-</div>
-</div>
-</div>
-<div class="p-4">
-<h3 class="text-lg font-semibold text-text-light dark:text-white">Blood Donation Camp</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400">August 20, 2024</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">30 Photos</p>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
-<div class="relative">
-<img alt="Album cover for Career Guidance Seminar" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7zHI6TWRPgugtsgZXG0iXyOj-FkRyXNNj7StJZ2yG00jirhRYINSrT66fhT_Rvk5oz0TDqHd5YnwxBHSgc71aQhN3ipawcusgos80oEnYSLXe9ey9oEswyF9qU6Ixaq7eBS7Ma9_TIH9PB29CJNQVB5oV3i2pwGCK-P4cvgCC6VCoMejP0HkfB6_X89DRYJKUtbgI9HANwztFp940IqpShieW5MY4rXfVKloVODT5V1j9kzCmIcPcGSdfjD4NwCNOhASAqwnSUaa"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-4">
-<button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
-</div>
-</div>
-</div>
-<div class="p-4">
-<h3 class="text-lg font-semibold text-text-light dark:text-white">Career Guidance Seminar</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400">September 10, 2024</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">18 Photos</p>
-</div>
-</div>
-</div>
-<div class="mt-12">
-<h2 class="text-xl font-semibold text-text-light dark:text-white mb-4" data-aos="fade-up">Uncategorized Photos</h2>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-<div class="relative group" data-aos="fade-up" data-aos-delay="100">
-<img alt="uncategorized photo 1" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4mST3-VEzdD4IvddOZ05vMqTrE7LwxCKwgsjK5_HM_w43PTcpuGLht_zke61oIKvmYdvgV45aW3OQkMwC6fk7Q3wkApzy9Ugons9zdzYqroSdUyxUwNhUDRaU3lZdWKEXur44E53iu9i1DwBghmH_zt7TNgFdDxiQdGtM6VHKFf04yR_WhDJklmIj-3yZzcsCxtjG2GE7UzwVdPguElkopAvkcHBA-VnaTalcwgs2Kr_5pe1oE5V3TcbGf-cr61VtfKRbgz9mE1ml"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-2">
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
-</div>
-</div>
-</div>
-<div class="relative group" data-aos="fade-up" data-aos-delay="200">
-<img alt="uncategorized photo 2" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgyAob_xQslkHxoMXFPhvxAdaTu3Vx06drUWn4xRtmoqKFMXBnvr0LN2GNeoRggc387y95fbdWUEHeKWrGsjlxT7xeaOX0LXJ4G6g4uh8_Maph-QxeaO7hCi4xxuJvK0rWgfUGrvrS4ip8uzSaTc0uKz6nF6h1-yc9CjIqOzWaZ4hR68yzVmBxjRLvZTssT2WrDDrWcgdtkRvZHkrNIm4zbzGJjpWP3QlEUKm4fAsDsc6512WNDwY02-7XtdCpAhFhUg4LvVjikU11"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-2">
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
-</div>
-</div>
-</div>
-<div class="relative group" data-aos="fade-up" data-aos-delay="300">
-<img alt="uncategorized photo 3" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9tD-MYuzKgj3sRrTtF_jQF9Qn2qYYSOvFJNspsQ-FhQB-_N-J4NsSlj_hva8VSIIA1HZYRbh_TxhQdxtuvAflTc8sbBilbWKZs_i3w_5hpU1BZlTPmGZ7Ye6IQrbeJjn_fFuJRpV9tmUZgxmJbPTHjluC5Kdw0-deAXxGlITv-eXdlvz1pUCtN1LM4WhDsmO04TezziqP1jmeZX9G3onHXEPAniVJ78AXZXmecDEwHHPVTC4Iz4HnDLJX7A0h6y6Hu_xDO8HLAXnt"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-2">
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
-</div>
-</div>
-</div>
-<div class="relative group" data-aos="fade-up" data-aos-delay="400">
-<img alt="uncategorized photo 4" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmqamprEiJq2p4Ba0SM9UVMlxsX_5KEwpF5_arHkrbG2OFb82DTW2K3OgvdkF_bn_-v5gM_wqSTkbhKmzPhCdZNsdoKiPpstyzZ8b1pIOipK8295R2vHMy0Gh55DBNa0oZ3kKXTyV96WHSex00frH0QEL0-74yUx6nbioAkd-2gO0hbZ7HUqMokSJVz3TyFCIbfOHBKlCdUx2o50hH76D-ysIdflySxC22CfzECKZHCNM7-8c-cVZHzTvZwUbUwAsSn1T0PI9oB46f"/>
-<div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-<div class="flex space-x-2">
-<button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative">
+                            <img alt="Album cover for Tree Plantation Drive" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwZ2TobNbgUNBfv70cfw2Z90q_uU9kFMqewiFlxD67qOVFUjpPFWa-Qy8Dcgw_Hc_cyN0ac3vXMf0oCMt72P1Z_HnQNx_3PjtpD6sDYt0GQK7LsYEs5GhwTYK3BDf4htnZeths29rKLeD7LSHtId6v1-6EbvukyNFjS8vtiRwgCmBm_y4Yu2IJ0O3nsmVrlSRm99EW9lLohz0JfNFK3cBGsW7f7Oo3AHfMRHf1Df-wUSjR-0BvpHnEqaijiS2n9exEJqy55DCkHCWA" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-4">
+                                    <button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-text-light dark:text-white">Tree Plantation Drive</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">July 25, 2024</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">15 Photos</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative">
+                            <img alt="Album cover for Youth Leadership Workshop" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCFbC9t0XeKAGzAGIQyk8ERc3ENNdaaXax0cstSS_8VaZ4KuI2HYC2vklLFjB2N9AakJeyDGhcD6Xk0ou1N6inEDVFdJ9ilQFwVLOJnu6B2cR_lsToE1dX6ipWgEZtt7ZjX6tlKcGSk2zs-HyVeW7a8jg892ohRy-gm_T39I3vMO3soVdGkruqkDonpiqWfNPO3MCzrCp4uArhaVu5uBH28EpH7oCPCCk9NvI0xxjCFShmMEfHBWXcMtUQ6QNFM1C6LLVxCGfVt5Ry" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-4">
+                                    <button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-text-light dark:text-white">Youth Leadership Workshop</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">August 5, 2024</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">22 Photos</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative">
+                            <img alt="Album cover for Blood Donation Camp" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6rTxJC8qyl-Hwa8GCR5uZC8ypIImHo5i5jI7CAddyPfJ8hfzdDV8HTHnCsd-ZXWsRp9rT6LqRbsWOxp4FHAuGsQm-3flkMA8s0byi5YybMROK9Ehe9Aq8gaYyhwZpAWY6WpyAID_t8dv-osFCb-1ytBeFdHqnf0SrqjUDCHLvUuonLAQ5vlZBfx2Ykg5UUiNMVtGng3kRmDJea6n0nE6xEqbkJVjxrfkwGNVEVwIOoGNWqCzFIZ6wn7L4wWu8PhDz2sP_6WiTWmgm" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-4">
+                                    <button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-text-light dark:text-white">Blood Donation Camp</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">August 20, 2024</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">30 Photos</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative">
+                            <img alt="Album cover for Career Guidance Seminar" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7zHI6TWRPgugtsgZXG0iXyOj-FkRyXNNj7StJZ2yG00jirhRYINSrT66fhT_Rvk5oz0TDqHd5YnwxBHSgc71aQhN3ipawcusgos80oEnYSLXe9ey9oEswyF9qU6Ixaq7eBS7Ma9_TIH9PB29CJNQVB5oV3i2pwGCK-P4cvgCC6VCoMejP0HkfB6_X89DRYJKUtbgI9HANwztFp940IqpShieW5MY4rXfVKloVODT5V1j9kzCmIcPcGSdfjD4NwCNOhASAqwnSUaa" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-4">
+                                    <button class="text-white hover:text-accent"><span class="material-symbols-outlined text-3xl">edit</span></button>
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined text-3xl">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-text-light dark:text-white">Career Guidance Seminar</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">September 10, 2024</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">18 Photos</p>
+                        </div>
+                    </div>
+                </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
+                <div class="mt-12">
+                    <h2 class="text-xl font-semibold text-text-light dark:text-white mb-4" data-aos="fade-up">Uncategorized Photos</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+                            <img alt="uncategorized photo 1" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4mST3-VEzdD4IvddOZ05vMqTrE7LwxCKwgsjK5_HM_w43PTcpuGLht_zke61oIKvmYdvgV45aW3OQkMwC6fk7Q3wkApzy9Ugons9zdzYqroSdUyxUwNhUDRaU3lZdWKEXur44E53iu9i1DwBghmH_zt7TNgFdDxiQdGtM6VHKFf04yR_WhDJklmIj-3yZzcsCxtjG2GE7UzwVdPguElkopAvkcHBA-VnaTalcwgs2Kr_5pe1oE5V3TcbGf-cr61VtfKRbgz9mE1ml" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-2">
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group" data-aos="fade-up" data-aos-delay="200">
+                            <img alt="uncategorized photo 2" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgyAob_xQslkHxoMXFPhvxAdaTu3Vx06drUWn4xRtmoqKFMXBnvr0LN2GNeoRggc387y95fbdWUEHeKWrGsjlxT7xeaOX0LXJ4G6g4uh8_Maph-QxeaO7hCi4xxuJvK0rWgfUGrvrS4ip8uzSaTc0uKz6nF6h1-yc9CjIqOzWaZ4hR68yzVmBxjRLvZTssT2WrDDrWcgdtkRvZHkrNIm4zbzGJjpWP3QlEUKm4fAsDsc6512WNDwY02-7XtdCpAhFhUg4LvVjikU11" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-2">
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group" data-aos="fade-up" data-aos-delay="300">
+                            <img alt="uncategorized photo 3" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9tD-MYuzKgj3sRrTtF_jQF9Qn2qYYSOvFJNspsQ-FhQB-_N-J4NsSlj_hva8VSIIA1HZYRbh_TxhQdxtuvAflTc8sbBilbWKZs_i3w_5hpU1BZlTPmGZ7Ye6IQrbeJjn_fFuJRpV9tmUZgxmJbPTHjluC5Kdw0-deAXxGlITv-eXdlvz1pUCtN1LM4WhDsmO04TezziqP1jmeZX9G3onHXEPAniVJ78AXZXmecDEwHHPVTC4Iz4HnDLJX7A0h6y6Hu_xDO8HLAXnt" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-2">
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group" data-aos="fade-up" data-aos-delay="400">
+                            <img alt="uncategorized photo 4" class="rounded-lg shadow-md w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmqamprEiJq2p4Ba0SM9UVMlxsX_5KEwpF5_arHkrbG2OFb82DTW2K3OgvdkF_bn_-v5gM_wqSTkbhKmzPhCdZNsdoKiPpstyzZ8b1pIOipK8295R2vHMy0Gh55DBNa0oZ3kKXTyV96WHSex00frH0QEL0-74yUx6nbioAkd-2gO0hbZ7HUqMokSJVz3TyFCIbfOHBKlCdUx2o50hH76D-ysIdflySxC22CfzECKZHCNM7-8c-cVZHzTvZwUbUwAsSn1T0PI9oB46f" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="flex space-x-2">
+                                    <button class="text-white hover:text-primary-DEFAULT"><span class="material-symbols-outlined">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
@@ -307,4 +238,5 @@
             offset: 100
         });
     </script>
-</body></html>
+</body>
+</html>

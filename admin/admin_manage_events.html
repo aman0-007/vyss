@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
-<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
-<link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
+    <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -42,235 +43,424 @@
             },
         };
     </script>
-<style>
+    <style>
         /* On-load animations */
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .fade-in-down {
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-        
-        .scale-in {
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
+        .fade-in-up { animation: fadeInUp 1s ease-out; }
+        .fade-in-down { animation: fadeInDown 1s ease-out; }
+        .fade-in-left { animation: fadeInLeft 1s ease-out; }
+        .fade-in-right { animation: fadeInRight 1s ease-out; }
+        .scale-in { animation: scaleIn 0.8s ease-out; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
         /* Smooth transitions for interactive elements */
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        
-        /* Stagger animation delays */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
+        .smooth-transition { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="flex h-screen bg-background-light dark:bg-background-dark">
-<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
-<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
-<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
-</div>
-<nav class="mt-6">
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
-<span class="material-symbols-outlined mr-4">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_manage_events.html">
-<span class="material-symbols-outlined mr-4">event</span>
-<span>Manage Events</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
-<span class="material-symbols-outlined mr-4">photo_library</span>
-<span>Photo Gallery</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
-<span class="material-symbols-outlined mr-4">co_present</span>
-<span>Attendance</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
-<span class="material-symbols-outlined mr-4">group</span>
-<span>Student Registrations</span>
-</a>
-</nav>
-<div class="absolute bottom-0 w-64 p-6">
-<a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
-<span class="material-symbols-outlined mr-4">logout</span>
-<span>Logout</span>
-</a>
-</div>
-</aside>
-<div class="flex-1 flex flex-col overflow-hidden">
-<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
-<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Manage Events</h1>
-<div class="flex items-center space-x-4">
-<span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
-<img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
-</div>
-</header>
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
-<div class="flex justify-end mb-6" data-aos="fade-up">
-<button class="bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition">
-<span class="material-symbols-outlined mr-2">add_circle</span>
+    <div class="flex h-screen bg-background-light dark:bg-background-dark">
+        <aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
+            <div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
+                <img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg" />
+            </div>
+            <nav class="mt-6">
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_dashboard.html">
+                    <span class="material-symbols-outlined mr-4">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_manage_events.html">
+                    <span class="material-symbols-outlined mr-4">event</span>
+                    <span>Manage Events</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
+                    <span class="material-symbols-outlined mr-4">photo_library</span>
+                    <span>Photo Gallery</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
+                    <span class="material-symbols-outlined mr-4">co_present</span>
+                    <span>Attendance</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
+                    <span class="material-symbols-outlined mr-4">group</span>
+                    <span>Student Registrations</span>
+                </a>
+            </nav>
+            <div class="absolute bottom-0 w-64 p-6">
+                <a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
+                    <span class="material-symbols-outlined mr-4">logout</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
+                <h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Manage Events</h1>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
+                    <img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB" />
+                </div>
+            </header>
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
+                <div class="flex justify-end mb-6" data-aos="fade-up">
+                    <button id="openEventModalBtn" class="bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition">
+                        <span class="material-symbols-outlined mr-2">add_circle</span>
                         Add New Event
                     </button>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="200">Existing Events</h2>
-<div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="300">
-<table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-<thead class="bg-gray-50 dark:bg-gray-800">
-<tr>
-<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Event Name</th>
-<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Date</th>
-<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Time</th>
-<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Location</th>
-<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Actions</th>
-</tr>
-</thead>
-<tbody class="bg-secondary-light dark:bg-secondary-dark divide-y divide-gray-200 dark:divide-gray-700">
-<tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Tree Plantation Drive</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">July 25, 2024</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">09:00 AM</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">City Park</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<div class="flex items-center space-x-4">
-<button class="text-secondary hover:text-secondary/80">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="text-primary-DEFAULT hover:text-primary-hover">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Youth Leadership Workshop</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 5, 2024</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">10:30 AM</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Community Hall</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<div class="flex items-center space-x-4">
-<button class="text-secondary hover:text-secondary/80">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="text-primary-DEFAULT hover:text-primary-hover">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Blood Donation Camp</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 20, 2024</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">08:00 AM - 02:00 PM</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Red Cross Building</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<div class="flex items-center space-x-4">
-<button class="text-secondary hover:text-secondary/80">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="text-primary-DEFAULT hover:text-primary-hover">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Career Guidance Seminar</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">September 10, 2024</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">02:00 PM</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">University Auditorium</td>
-<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-<div class="flex items-center space-x-4">
-<button class="text-secondary hover:text-secondary/80">
-<span class="material-symbols-outlined">edit</span>
-</button>
-<button class="text-primary-DEFAULT hover:text-primary-hover">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</main>
-</div>
-</div>
+                </div>
+                <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="200">Existing Events</h2>
+                    <div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="300">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <thead class="bg-gray-50 dark:bg-gray-800">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Event Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Date</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Time</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Location</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider" scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-secondary-light dark:bg-secondary-dark divide-y divide-gray-200 dark:divide-gray-700">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Tree Plantation Drive</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">July 25, 2024</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">09:00 AM</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">City Park</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div class="flex items-center space-x-4">
+                                            <button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined">edit</span></button>
+                                            <button class="text-primary-DEFAULT hover:text-primary-hover"><span class="material-symbols-outlined">delete</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Youth Leadership Workshop</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 5, 2024</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">10:30 AM</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Community Hall</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div class="flex items-center space-x-4">
+                                            <button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined">edit</span></button>
+                                            <button class="text-primary-DEFAULT hover:text-primary-hover"><span class="material-symbols-outlined">delete</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Blood Donation Camp</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">August 20, 2024</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">08:00 AM - 02:00 PM</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">Red Cross Building</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div class="flex items-center space-x-4">
+                                            <button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined">edit</span></button>
+                                            <button class="text-primary-DEFAULT hover:text-primary-hover"><span class="material-symbols-outlined">delete</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-light dark:text-white">Career Guidance Seminar</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">September 10, 2024</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">02:00 PM</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">University Auditorium</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <div class="flex items-center space-x-4">
+                                            <button class="text-secondary hover:text-secondary/80"><span class="material-symbols-outlined">edit</span></button>
+                                            <button class="text-primary-DEFAULT hover:text-primary-hover"><span class="material-symbols-outlined">delete</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
+    <div id="eventModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div id="eventModalContent" class="bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300">
+            <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                <h2 class="text-2xl font-bold text-text-light dark:text-white">Add New Event</h2>
+                <button id="closeEventModal" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+
+            <form id="eventForm" class="p-6 space-y-6">
+                <div class="form-group">
+                    <label for="eventName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Event Name <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" id="eventName" name="eventName" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500" placeholder="Enter event name">
+                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                        <label for="eventDate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Event Date <span class="text-red-500">*</span>
+                        </label>
+                        <input type="date" id="eventDate" name="eventDate" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500">
+                        <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Event Time <span class="text-red-500">*</span>
+                        </label>
+                        <input type="time" id="eventTime" name="eventTime" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500">
+                        <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Location <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" id="eventLocation" name="eventLocation" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500" placeholder="Enter event location">
+                    <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        Description
+                    </label>
+                    <textarea id="eventDescription" name="eventDescription" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500 resize-none" placeholder="Brief description of the event (optional)"></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <button type="button" id="cancelEventBtn" class="flex-1 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02]">
+                        Cancel
+                    </button>
+                    <button type="submit" id="submitEventBtn" class="flex-1 px-6 py-3 bg-primary-DEFAULT text-white rounded-lg font-medium hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary-DEFAULT focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                        <span class="submit-text">Create Event</span>
+                        <span class="loading-spinner hidden">
+                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Creating...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="eventSuccessToast" 
+        class="fixed top-4 right-1 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50" 
+        style="transform: translateX(105%);">
+        <div class="flex items-center">
+            <span class="material-symbols-outlined mr-2">check_circle</span>
+            <span>Event created successfully!</span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    // Manages all functionality for the event creation modal.
+    class EventManagementModal {
+        constructor() {
+            // Select all necessary DOM elements
+            this.modal = document.getElementById('eventModal');
+            this.modalContent = document.getElementById('eventModalContent');
+            this.form = document.getElementById('eventForm');
+            this.openBtn = document.getElementById('openEventModalBtn');
+            this.closeBtn = document.getElementById('closeEventModal');
+            this.cancelBtn = document.getElementById('cancelEventBtn');
+            this.submitBtn = document.getElementById('submitEventBtn');
+            this.successToast = document.getElementById('eventSuccessToast');
+
+            // Initialize the modal by binding event listeners
+            this.init();
+        }
+
+        init() {
+            // Event listeners
+            this.openBtn.addEventListener('click', () => this.openModal());
+            this.closeBtn.addEventListener('click', () => this.closeModal());
+            this.cancelBtn.addEventListener('click', () => this.closeModal());
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) this.closeModal();
+            });
+
+            // Form submission
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+            // Real-time validation
+            this.setupValidation();
+
+            // Set minimum date to today
+            this.setMinimumDate();
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) {
+                    this.closeModal();
+                }
+            });
+        }
+
+        openModal() {
+            this.modal.classList.remove('hidden');
+            this.modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            // Trigger animation
+            setTimeout(() => {
+                this.modalContent.classList.remove('scale-95', 'opacity-0');
+                this.modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            // Focus first input
+            setTimeout(() => {
+                document.getElementById('eventName').focus();
+            }, 300);
+        }
+
+        closeModal() {
+            this.modalContent.classList.remove('scale-100', 'opacity-100');
+            this.modalContent.classList.add('scale-95', 'opacity-0');
+            document.body.style.overflow = '';
+
+            setTimeout(() => {
+                this.modal.classList.add('hidden');
+                this.modal.classList.remove('flex');
+                this.resetForm();
+            }, 300);
+        }
+
+        setupValidation() {
+            const inputs = this.form.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', () => this.validateField(input));
+                input.addEventListener('input', () => this.clearError(input));
+            });
+        }
+
+        validateField(field) {
+            const value = field.value.trim();
+            let isValid = true;
+            let errorMessage = '';
+
+            this.clearError(field);
+
+            if (field.hasAttribute('required') && !value) {
+                errorMessage = 'This field is required.';
+                isValid = false;
+            }
+
+            if (isValid && field.type === 'date' && value) {
+                const selectedDate = new Date(value + 'T00:00:00');
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                if (selectedDate < today) {
+                    errorMessage = 'Event date cannot be in the past.';
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                this.showError(field, errorMessage);
+            }
+            return isValid;
+        }
+
+        showError(field, message) {
+            const errorDiv = field.parentNode.querySelector('.error-message');
+            if (errorDiv) {
+                field.classList.add('border-red-500', 'focus:ring-red-500');
+                field.classList.remove('border-gray-300', 'focus:ring-primary-DEFAULT');
+                errorDiv.textContent = message;
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        clearError(field) {
+            const errorDiv = field.parentNode.querySelector('.error-message');
+            if (errorDiv) {
+                field.classList.remove('border-red-500', 'focus:ring-red-500');
+                field.classList.add('border-gray-300', 'focus:ring-primary-DEFAULT');
+                errorDiv.classList.add('hidden');
+            }
+        }
+
+        setMinimumDate() {
+            const dateInput = document.getElementById('eventDate');
+            if(dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+        }
+
+        async handleSubmit(e) {
+            e.preventDefault();
+
+            let isFormValid = true;
+            const inputs = this.form.querySelectorAll('input[required], textarea[required]');
+            inputs.forEach(input => {
+                if (!this.validateField(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (!isFormValid) {
+                return;
+            }
+
+            this.setLoadingState(true);
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                this.showSuccessToast();
+                this.closeModal();
+            } catch (error) {
+                console.error('Event creation failed:', error);
+                alert('Event creation failed. Please try again.');
+            } finally {
+                this.setLoadingState(false);
+            }
+        }
+
+        setLoadingState(loading) {
+            const submitText = this.submitBtn.querySelector('.submit-text');
+            const loadingSpinner = this.submitBtn.querySelector('.loading-spinner');
+
+            if (loading) {
+                this.submitBtn.disabled = true;
+                submitText.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+            } else {
+                this.submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+
+        showSuccessToast() {
+            // 1. Bring the toast into view by setting transform to 0.
+            // The 'transition-transform' class in your HTML will animate this smoothly.
+            this.successToast.style.transform = 'translateX(0)';
+
+            // 2. After 3 seconds, hide it again by setting it back to the original off-screen position.
+            setTimeout(() => {
+                this.successToast.style.transform = 'translateX(105%)';
+            }, 3000);
+        }
+
+        resetForm() {
+            this.form.reset();
+            const inputs = this.form.querySelectorAll('input, textarea');
+            inputs.forEach(input => this.clearError(input));
+        }
+    }
+
+    // Initialize scripts when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
@@ -278,5 +468,10 @@
             once: true,
             offset: 100
         });
+
+        // Initialize the modal functionality
+        new EventManagementModal();
+    });
     </script>
-</body></html>
+</body>
+</html>

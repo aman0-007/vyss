@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vivek Yuv Seva Shakti</title>
-<link rel="icon" type="image/jpeg" href="assets/icon.jpeg">
-<link rel="shortcut icon" type="image/jpeg" href="assets/icon.jpeg">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vivek Yuv Seva Shakti</title>
+    <link rel="icon" type="image/jpeg" href="assets/icon.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="assets/icon.jpeg">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -42,7 +43,7 @@
             },
         };
     </script>
-<style>
+    <style>
         .glassmorphic {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -55,6 +56,7 @@
         }
         .carousel-item {
             display: none;
+            opacity: 0;
             transition: opacity 1s ease-in-out;
         }
         .carousel-item.active {
@@ -62,328 +64,212 @@
         }
         
         /* On-load animations */
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .fade-in-down {
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-        
-        .scale-in {
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
+        .fade-in-up { animation: fadeInUp 1s ease-out; }
+        .fade-in-down { animation: fadeInDown 1s ease-out; }
+        .fade-in-left { animation: fadeInLeft 1s ease-out; }
+        .fade-in-right { animation: fadeInRight 1s ease-out; }
+        .scale-in { animation: scaleIn 0.8s ease-out; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
         /* Smooth transitions for interactive elements */
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        
-        /* Stagger animation delays */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
+        .smooth-transition { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="relative">
-<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm fade-in-down">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-20">
-<div class="flex-shrink-0">
-<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="assets/icon.jpeg"/>
-</div>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#about">About Us</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#mission">Our Mission</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#initiatives">Initiatives</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#contact">Contact</a>
-</nav>
-<a class="hidden md:inline-block bg-primary-DEFAULT text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-hover transition duration-300" href="#donate">
-                        Donate
-                    </a>
-<div class="md:hidden">
-<button class="text-gray-600 dark:text-gray-300 focus:outline-none" id="menu-btn">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</div>
-<div class="hidden md:hidden" id="mobile-menu">
-<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#about">About Us</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#mission">Our Mission</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#initiatives">Initiatives</a>
-<a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#contact">Contact</a>
-<a class="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-primary-DEFAULT text-white text-center mt-2" href="#donate">Donate</a>
-</div>
-</div>
-</header>
-<section class="relative h-screen w-full overflow-hidden" id="hero">
-<div class="absolute inset-0 w-full h-full" id="carousel">
-<div class="carousel-item active absolute inset-0">
-<img alt="Community service" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArbb88nV5T1BwWK5XQ5mnt3EMKZtBtG37WeIZXRwM1JS_df-la6hQKwyTITyKo1bKxkvSkD5URo0bp4dMJp5kfzERlIZCcEnWJiN6iItyXZb5tzOI1XEdiSLoRCvgXshngj1ZTYuJ4ICcmwbF7AY0XE9sRGsZA9-Mz3gukAqnkMOswiTybhfCuJRw0BiVbWEUY44N5Q1Zd5gmhFF7iMmHgpnuRnkGjztrReJSDv6NIszUE7LfuY7lC4KigQHSVpdVdGyts3t2OJAp_"/>
-<div class="absolute inset-0 bg-black/50"></div>
-</div>
-<div class="carousel-item absolute inset-0">
-<img alt="Youth empowerment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3IlKpTwKuxk5r943DL7Fei6kkT3T_O3vSa1HOT8wMDXki2AoafkYo1S4eksLg5HcitGVVmw_Au01El1J05__WABaNUNfqGY8xEolz5VpQreLDB-ejEttAAwY0FsxTi5sF6ZA6E3qodGHpLbAk071dslhB_69TLA3HOU-R84tX1M2jg0vrsn-aHPjba8XljzcnRcBBj_t5AhesaADHCuzdFBAuBd8yAvZRh2uu5FzVgTRwz04EH5mUR2zY1R59Dr_kwr7oLS4KTLzC"/>
-<div class="absolute inset-0 bg-black/50"></div>
-</div>
-<div class="carousel-item absolute inset-0">
-<img alt="Volunteering" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox9RaCIy40l41Ic2ma1bL9pPEFRpeNSKfjXgTfJ9S9X2aqWQuWPRgmAlVUFl1xKBcXVkHjuyuL_EppYPB2sVtlNDjQhlBE1_x28UqPxx_cpN7x1Fu4eFcoCAdHUEMbzeAgCKEtxFY5fKpLFIlWCdSHj34YQ2R6QeS6zj1be_w4B9UO0hU0Qd_NXo4kdcKiRbbuMRgTR_piwJeMySMYb2SKTvxiWExnIDcSuxSODyew1ckRH6oirrUrPmDAJmRoPWrgxXp8tvjnqnL"/>
-<div class="absolute inset-0 bg-black/50"></div>
-</div>
-<div class="carousel-item absolute inset-0">
-<img alt="Social work" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaygCDR0DcSVdtA8FiCBxF2M9NocUCrHEcVtuYkqFa_VWL0XfvmPIv827m6eC-tDBUH3GVokinkVqhW5WvVO9-RmtsNci_vyBROzZn6GhMj-SJXPwS74dZ55P3RlwaakDzjM9yQjd6GWbPxZaDMfQEy5-PZC-uAiHwis-h1BPARZ4jpgP1YNs6UIDy9_WwW8gewnhtXBevlEsyX10_EOd7YwVtacd1KBcYWRyF4OXQt17Gq6nmMnRJVTYjp1klQax2zqM1XRDsL2p"/>
-<div class="absolute inset-0 bg-black/50"></div>
-</div>
-</div>
-<div class="relative z-10 flex items-center justify-center h-full">
-<div class="glassmorphic rounded-2xl p-8 md:p-12 max-w-3xl mx-4 text-center scale-in">
-<h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-in-up stagger-1">
-                        Vivek Yuv Seva Shakti
-                    </h1>
-<p class="text-xl md:text-2xl text-accent font-semibold mb-8 fade-in-up stagger-2">
-                        Empower Youth <span class="text-white mx-2">•</span> Enrich Tomorrow
-                    </p>
-<p class="text-lg text-gray-200 dark:text-gray-300 max-w-2xl mx-auto mb-10 fade-in-up stagger-3">
-                        We are a dedicated social service organization committed to harnessing the power of youth to create a positive and lasting impact on our communities.
-                    </p>
-<div class="flex flex-wrap justify-center gap-4 fade-in-up stagger-4">
-<a class="bg-primary-DEFAULT text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-primary-hover transition duration-300 text-lg smooth-transition" href="#join">
-                            Join Us
-                        </a>
-<a class="bg-white/90 dark:bg-gray-700/80 text-primary-DEFAULT dark:text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-600 transition duration-300 text-lg smooth-transition" href="#learn-more">
-                            Learn More
-                        </a>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-background-light dark:bg-background-dark" id="about">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div>
-<h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-right" data-aos-duration="800">Who We Are</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400 mb-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-                            Vivek Yuv Seva Shakti was founded on the principle that the youth are the architects of the future. We provide a platform for young individuals to engage in meaningful social service, develop leadership skills, and contribute to nation-building. Our name, translating to "Youth Service Power," reflects our core belief in the transformative potential of young people.
-                        </p>
-<p class="text-lg text-gray-600 dark:text-gray-400" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
-                            Inspired by the ideals of service and selflessness, we channel the energy and enthusiasm of the youth into constructive activities that address pressing social needs.
-                        </p>
-</div>
-<div class="relative h-80 rounded-lg overflow-hidden shadow-2xl" data-aos="fade-left" data-aos-duration="800">
-<img alt="Group of young volunteers working together" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSVKfFlWx6LY2D00dOBszCq7h_3efFYU0oH74XZsKJ6KDxrOPEHOvP29PqDa-B-tH44y81D6NNNZcRBBJKsHqGZ0B1ZIv3AjTdgW-6lZB8OqzAqSkLXfA3wlffUm2PG2TSwerLjXYnuWWubjzIjPLz9y27gctbFULq0DC-kcSe7d5xSGcmbEosps4unPRcwR8C0kt934Vgh7gyuKVmOMX_8-1LIwHqaCfZ4hfRU1D4TbiASAn7opMdLkDj-Jfti1MyS9O2GcepGM0s"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-secondary-light dark:bg-secondary-dark relative overflow-hidden" id="mission">
-<div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full"></div>
-<div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full"></div>
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-up" data-aos-duration="800">Our Mission</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                        To empower youth by providing them with opportunities for personal growth, leadership development, and social responsibility, thereby creating a better and more prosperous tomorrow for all.
-                    </p>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-<span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">groups</span>
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Community Service</h3>
-<p class="text-gray-600 dark:text-gray-400">Organizing and executing projects that benefit local communities, from cleanliness drives to supporting underprivileged sections of society.</p>
-</div>
-<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-<span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">school</span>
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Skill Development</h3>
-<p class="text-gray-600 dark:text-gray-400">Conducting workshops and training programs to equip youth with valuable skills for their personal and professional lives.</p>
-</div>
-<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-<span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">flag</span>
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">National Integration</h3>
-<p class="text-gray-600 dark:text-gray-400">Promoting a sense of unity, patriotism, and cultural understanding among the youth from diverse backgrounds.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 bg-background-light dark:bg-background-dark" id="initiatives">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-up" data-aos-duration="800">Our Key Initiatives</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                        We actively engage in projects that make a tangible difference.
-                    </p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-<img alt="Food distribution drive" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_BflRMsfl_TsTVQN6EK5RscF62MVzJgxygVpLnudjtPP9Jm5WMNlhwfKSUDVSF88MDQAVnPVfGPrgbZqICl_4ZM5e_efmq7YqvX70hyrJvPGRlBziqR01OAfetVd5WkE0ay690s51C_tWUpHOLVZERBavnHrbDP9BnSw7NiRSzs4awNqCd_inGJq8SlERyJtaEVNFMScE4eSmsAeJItjPOXsSNaEkMspwE3lKB31S4y7uzrAhmxyq-O1RNRs3IeFbRFkpXZMDXRl"/>
-<div class="p-6">
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Food &amp; Nutrition Drives</h3>
-<p class="text-gray-600 dark:text-gray-400">Ensuring the needy have access to wholesome meals through our regular distribution programs.</p>
-</div>
-</div>
-<div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-<img alt="Children in a makeshift classroom" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRG46muEe_ct4z5xh50VnSeghTZxP9D1DCTfRZkWWevUxHZtqSjh9sqqAlGonbqJVn29e2s0WXhA2n_e0Aa3IJK_GdZ4QSADsATfG7fxlkIswcANtgcv-EDj5KxZDIEhtF8dfph_LFVpDrtvfo3NTZQeXhnD3bT8MuGxLAL_KT5SHIPWJRRatErMfMGTvuR_dsEksZIB9gEXfBgvOqUuDV0Pxal8j6pOYu-wt9CAFMnkp0D4g75vvkctaGsXffJgR7t50yIG8W77OF"/>
-<div class="p-6">
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Education for All</h3>
-<p class="text-gray-600 dark:text-gray-400">Providing educational support and resources to children from underprivileged backgrounds.</p>
-</div>
-</div>
-<div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-<img alt="Volunteers planting saplings" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP1Ev9i7myuzooOGhP88bEkl0hLodfxGn4uyUt2IwTsjdz5M7LYV27SqjSBCu8PrxfpI4PJ6Oc93IzRBbD8VXxkavWSFYMJ12NOYLJhVeZP8yK5edGLNEJu-kzkmnB3x3qY_rYoZS8BpAW_zMvsSACidqArkuSZnrkakdqkiHovGVuG8SY_kgd6o2F7Uth8-p1McE1LrJaWQSALFiqHCN2Bj3Cz3cGhmMw4MBi4Ozu_-81_lHYF5c7USMRCndhiR5OndLlZZ2RQfCJ"/>
-<div class="p-6">
-<h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Environmental Conservation</h3>
-<p class="text-gray-600 dark:text-gray-400">Organizing tree plantation drives and awareness campaigns for a greener planet.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="bg-primary-DEFAULT/90 dark:bg-primary-DEFAULT/95" id="donate">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-<h2 class="text-4xl font-bold text-white mb-4" data-aos="fade-up" data-aos-duration="800">Support Our Cause</h2>
-<p class="text-xl text-white max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    Your contribution can help us empower more young people and expand our reach. Every donation, big or small, makes a significant difference.
-                </p>
-<a class="bg-white text-primary-DEFAULT font-bold py-4 px-12 rounded-lg shadow-xl hover:bg-gray-100 transition duration-300 text-xl transform hover:scale-105 smooth-transition" href="#" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    Make a Donation
-                </a>
-</div>
-</section>
-<section class="py-20 bg-secondary-light dark:bg-secondary-dark" id="contact">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="max-w-xl mx-auto">
-<h2 class="text-3xl font-bold text-text-light dark:text-white text-center mb-8" data-aos="fade-up" data-aos-duration="800">Get In Touch</h2>
-<form action="#" class="space-y-6" method="POST" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-<div>
-<label class="sr-only" for="name">Name</label>
-<input autocomplete="name" class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="name" name="name" placeholder="Your Name" type="text"/>
-</div>
-<div>
-<label class="sr-only" for="email">Email</label>
-<input autocomplete="email" class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="email" name="email" placeholder="Your Email" type="email"/>
-</div>
-<div>
-<label class="sr-only" for="message">Message</label>
-<textarea class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="message" name="message" placeholder="Your Message" rows="4"></textarea>
-</div>
-<div>
-<button class="w-full bg-primary-DEFAULT text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-hover transition duration-300 text-lg smooth-transition" type="submit">
-                                Submit Your Message
-                            </button>
-</div>
-</form>
-</div>
-</div>
-</section>
-<footer class="bg-background-dark text-gray-400" data-aos="fade-up" data-aos-duration="800">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="flex flex-col items-center space-y-4">
-<div class="flex space-x-6">
-<a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
-</svg></a>
-<a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-</svg></a>
-<a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.63-.043-1.44.188-2.12.23-.68.12-1.07-.1-1.61-.21-.53-.42-1.05-.42-1.65 0-1.48.87-2.65 1.94-2.65.9 0 1.34.68 1.34 1.48 0 .91-.58 2.25-.88 3.48-.25.99.5 1.8 1.48 1.8 1.78 0 3.14-1.88 3.14-4.57 0-2.39-1.72-4.06-4.17-4.06-2.82 0-4.52 2.1-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.09.18.06.28-.05.15-.17.65-.21.78-.04.18-.12.21-.26.13-1.04-.6-1.7-2.58-1.7-3.96 0-3.38 2.46-6.29 6.77-6.29 3.53 0 6.22 2.5 6.22 5.77 0 3.45-2.17 6.16-5.2 6.16-1.07 0-2.07-.53-2.42-1.13l-.6 2.27c-.24.87-1.05 2.07-1.57 2.71A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill-rule="evenodd"></path>
-</svg></a>
-</div>
-<p class="text-sm text-center">© 2024 Vivek Yuv Seva Shakti. All Rights Reserved.</p>
-</div>
-</div>
-</footer>
-</div>
-<script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        const carousel = document.getElementById('carousel');
-        const items = carousel.querySelectorAll('.carousel-item');
-        let currentIndex = 0;
-        function showNext() {
-            items[currentIndex].classList.remove('active');
-            items[currentIndex].style.opacity = 0;
-            currentIndex = (currentIndex + 1) % items.length;
-            items[currentIndex].classList.add('active');
-            setTimeout(() => items[currentIndex].style.opacity = 1, 50); // Small delay for transition
-        }
-        setInterval(showNext, 5000); // Change image every 5 seconds
-        items[0].style.opacity = 1;
-    </script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
+    <div class="relative">
+        <header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm fade-in-down">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0">
+                        <img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="assets/icon.jpeg" />
+                    </div>
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#about">About Us</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#mission">Our Mission</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#initiatives">Initiatives</a>
+                        <a class="text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT font-medium" href="#contact">Contact</a>
+                    </nav>
+                    <a class="hidden md:inline-block bg-primary-DEFAULT text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-primary-hover transition duration-300" href="#donate">Donate</a>
+                    <div class="md:hidden">
+                        <button class="text-gray-600 dark:text-gray-300 focus:outline-none" id="menu-btn">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#about">About Us</a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#mission">Our Mission</a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#initiatives">Initiatives</a>
+                    <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-primary-DEFAULT dark:hover:text-primary-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-800" href="#contact">Contact</a>
+                    <a class="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-primary-DEFAULT text-white text-center mt-2" href="#donate">Donate</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="relative h-screen w-full overflow-hidden" id="hero">
+            <div class="absolute inset-0 w-full h-full" id="carousel">
+                <div class="carousel-item active absolute inset-0">
+                    <img alt="Community service" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArbb88nV5T1BwWK5XQ5mnt3EMKZtBtG37WeIZXRwM1JS_df-la6hQKwyTITyKo1bKxkvSkD5URo0bp4dMJp5kfzERlIZCcEnWJiN6iItyXZb5tzOI1XEdiSLoRCvgXshngj1ZTYuJ4ICcmwbF7AY0XE9sRGsZA9-Mz3gukAqnkMOswiTybhfCuJRw0BiVbWEUY44N5Q1Zd5gmhFF7iMmHgpnuRnkGjztrReJSDv6NIszUE7LfuY7lC4KigQHSVpdVdGyts3t2OJAp_" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="carousel-item absolute inset-0">
+                    <img alt="Youth empowerment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3IlKpTwKuxk5r943DL7Fei6kkT3T_O3vSa1HOT8wMDXki2AoafkYo1S4eksLg5HcitGVVmw_Au01El1J05__WABaNUNfqGY8xEolz5VpQreLDB-ejEttAAwY0FsxTi5sF6ZA6E3qodGHpLbAk071dslhB_69TLA3HOU-R84tX1M2jg0vrsn-aHPjba8XljzcnRcBBj_t5AhesaADHCuzdFBAuBd8yAvZRh2uu5FzVgTRwz04EH5mUR2zY1R59Dr_kwr7oLS4KTLzC" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="carousel-item absolute inset-0">
+                    <img alt="Volunteering" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox9RaCIy40l41Ic2ma1bL9pPEFRpeNSKfjXgTfJ9S9X2aqWQuWPRgmAlVUFl1xKBcXVkHjuyuL_EppYPB2sVtlNDjQhlBE1_x28UqPxx_cpN7x1Fu4eFcoCAdHUEMbzeAgCKEtxFY5fKpLFIlWCdSHj34YQ2R6QeS6zj1be_w4B9UO0hU0Qd_NXo4kdcKiRbbuMRgTR_piwJeMySMYb2SKTvxiWExnIDcSuxSODyew1ckRH6oirrUrPmDAJmRoPWrgxXp8tvjnqnL" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+                <div class="carousel-item absolute inset-0">
+                    <img alt="Social work" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaygCDR0DcSVdtA8FiCBxF2M9NocUCrHEcVtuYkqFa_VWL0XfvmPIv827m6eC-tDBUH3GVokinkVqhW5WvVO9-RmtsNci_vyBROzZn6GhMj-SJXPwS74dZ55P3RlwaakDzjM9yQjd6GWbPxZaDMfQEy5-PZC-uAiHwis-h1BPARZ4jpgP1YNs6UIDy9_WwW8gewnhtXBevlEsyX10_EOd7YwVtacd1KBcYWRyF4OXQt17Gq6nmMnRJVTYjp1klQax2zqM1XRDsL2p" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                </div>
+            </div>
+            <div class="relative z-10 flex items-center justify-center h-full">
+                <div class="glassmorphic rounded-2xl p-8 md:p-12 max-w-3xl mx-4 text-center scale-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-in-up">Vivek Yuv Seva Shakti</h1>
+                    <p class="text-xl md:text-2xl text-accent font-semibold mb-8 fade-in-up stagger-2">Empower Youth <span class="text-white mx-2">•</span> Enrich Tomorrow</p>
+                    <p class="text-lg text-gray-200 dark:text-gray-300 max-w-2xl mx-auto mb-10 fade-in-up stagger-3">We are a dedicated social service organization committed to harnessing the power of youth to create a positive and lasting impact on our communities.</p>
+                    <div class="flex flex-wrap justify-center gap-4 fade-in-up stagger-4">
+                        <a class="bg-primary-DEFAULT text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-primary-hover transition duration-300 text-lg smooth-transition" href="#join">Join Us</a>
+                        <a class="bg-white/90 dark:bg-gray-700/80 text-primary-DEFAULT dark:text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-600 transition duration-300 text-lg smooth-transition" href="#learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-background-light dark:bg-background-dark" id="about">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-right" data-aos-duration="800">Who We Are</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">Vivek Yuv Seva Shakti was founded on the principle that the youth are the architects of the future. We provide a platform for young individuals to engage in meaningful social service, develop leadership skills, and contribute to nation-building. Our name, translating to "Youth Service Power," reflects our core belief in the transformative potential of young people.</p>
+                        <p class="text-lg text-gray-600 dark:text-gray-400" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Inspired by the ideals of service and selflessness, we channel the energy and enthusiasm of the youth into constructive activities that address pressing social needs.</p>
+                    </div>
+                    <div class="relative h-80 rounded-lg overflow-hidden shadow-2xl" data-aos="fade-left" data-aos-duration="800">
+                        <img alt="Group of young volunteers working together" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSVKfFlWx6LY2D00dOBszCq7h_3efFYU0oH74XZsKJ6KDxrOPEHOvP29PqDa-B-tH44y81D6NNNZcRBBJKsHqGZ0B1ZIv3AjTdgW-6lZB8OqzAqSkLXfA3wlffUm2PG2TSwerLjXYnuWWubjzIjPLz9y27gctbFULq0DC-kcSe7d5xSGcmbEosps4unPRcwR8C0kt934Vgh7gyuKVmOMX_8-1LIwHqaCfZ4hfRU1D4TbiASAn7opMdLkDj-Jfti1MyS9O2GcepGM0s" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-secondary-light dark:bg-secondary-dark relative overflow-hidden" id="mission">
+            <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full"></div>
+            <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full"></div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-up" data-aos-duration="800">Our Mission</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">To empower youth by providing them with opportunities for personal growth, leadership development, and social responsibility, thereby creating a better and more prosperous tomorrow for all.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">groups</span>
+                        <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Community Service</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Organizing and executing projects that benefit local communities, from cleanliness drives to supporting underprivileged sections of society.</p>
+                    </div>
+                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">school</span>
+                        <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Skill Development</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Conducting workshops and training programs to equip youth with valuable skills for their personal and professional lives.</p>
+                    </div>
+                    <div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <span class="material-symbols-outlined text-primary-DEFAULT text-5xl mb-4">flag</span>
+                        <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">National Integration</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Promoting a sense of unity, patriotism, and cultural understanding among the youth from diverse backgrounds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-background-light dark:bg-background-dark" id="initiatives">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-text-light dark:text-white mb-4" data-aos="fade-up" data-aos-duration="800">Our Key Initiatives</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">We actively engage in projects that make a tangible difference.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <img alt="Food distribution drive" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_BflRMsfl_TsTVQN6EK5RscF62MVzJgxygVpLnudjtPP9Jm5WMNlhwfKSUDVSF88MDQAVnPVfGPrgbZqICl_4ZM5e_efmq7YqvX70hyrJvPGRlBziqR01OAfetVd5WkE0ay690s51C_tWUpHOLVZERBavnHrbDP9BnSw7NiRSzs4awNqCd_inGJq8SlERyJtaEVNFMScE4eSmsAeJItjPOXsSNaEkMspwE3lKB31S4y7uzrAhmxyq-O1RNRs3IeFbRFkpXZMDXRl" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Food & Nutrition Drives</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Ensuring the needy have access to wholesome meals through our regular distribution programs.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <img alt="Children in a makeshift classroom" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRG46muEe_ct4z5xh50VnSeghTZxP9D1DCTfRZkWWevUxHZtqSjh9sqqAlGonbqJVn29e2s0WXhA2n_e0Aa3IJK_GdZ4QSADsATfG7fxlkIswcANtgcv-EDj5KxZDIEhtF8dfph_LFVpDrtvfo3NTZQeXhnD3bT8MuGxLAL_KT5SHIPWJRRatErMfMGTvuR_dsEksZIB9gEXfBgvOqUuDV0Pxal8j6pOYu-wt9CAFMnkp0D4g75vvkctaGsXffJgR7t50yIG8W77OF" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Education for All</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Providing educational support and resources to children from underprivileged backgrounds.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-secondary-dark rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <img alt="Volunteers planting saplings" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP1Ev9i7myuzooOGhP88bEkl0hLodfxGn4uyUt2IwTsjdz5M7LYV27SqjSBCu8PrxfpI4PJ6Oc93IzRBbD8VXxkavWSFYMJ12NOYLJhVeZP8yK5edGLNEJu-kzkmnB3x3qY_rYoZS8BpAW_zMvsSACidqArkuSZnrkakdqkiHovGVuG8SY_kgd6o2F7Uth8-p1McE1LrJaWQSALFiqHCN2Bj3Cz3cGhmMw4MBi4Ozu_-81_lHYF5c7USMRCndhiR5OndLlZZ2RQfCJ" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-light dark:text-white mb-2">Environmental Conservation</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Organizing tree plantation drives and awareness campaigns for a greener planet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-DEFAULT/90 dark:bg-primary-DEFAULT/95" id="donate">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+                <h2 class="text-4xl font-bold text-white mb-4" data-aos="fade-up" data-aos-duration="800">Support Our Cause</h2>
+                <p class="text-xl text-white max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Your contribution can help us empower more young people and expand our reach. Every donation, big or small, makes a significant difference.</p>
+                <a class="bg-white text-primary-DEFAULT font-bold py-4 px-12 rounded-lg shadow-xl hover:bg-gray-100 transition duration-300 text-xl transform hover:scale-105 smooth-transition" href="#" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Make a Donation</a>
+            </div>
+        </section>
+
+        <section class="py-20 bg-secondary-light dark:bg-secondary-dark" id="contact">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto">
+                    <h2 class="text-3xl font-bold text-text-light dark:text-white text-center mb-8" data-aos="fade-up" data-aos-duration="800">Get In Touch</h2>
+                    <form action="#" class="space-y-6" method="POST" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div>
+                            <label class="sr-only" for="name">Name</label>
+                            <input autocomplete="name" class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="name" name="name" placeholder="Your Name" type="text" />
+                        </div>
+                        <div>
+                            <label class="sr-only" for="email">Email</label>
+                            <input autocomplete="email" class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="email" name="email" placeholder="Your Email" type="email" />
+                        </div>
+                        <div>
+                            <label class="sr-only" for="message">Message</label>
+                            <textarea class="w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border-gray-300 dark:border-gray-600 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT" id="message" name="message" placeholder="Your Message" rows="4"></textarea>
+                        </div>
+                        <div>
+                            <button class="w-full bg-primary-DEFAULT text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-hover transition duration-300 text-lg smooth-transition" type="submit">Submit Your Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-background-dark text-gray-400" data-aos="fade-up" data-aos-duration="800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex space-x-6">
+                        <a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg></a>
+                        <a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                        <a class="text-gray-400 hover:text-primary-DEFAULT" href="#"><svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.63-.043-1.44.188-2.12.23-.68.12-1.07-.1-1.61-.21-.53-.42-1.05-.42-1.65 0-1.48.87-2.65 1.94-2.65.9 0 1.34.68 1.34 1.48 0 .91-.58 2.25-.88 3.48-.25.99.5 1.8 1.48 1.8 1.78 0 3.14-1.88 3.14-4.57 0-2.39-1.72-4.06-4.17-4.06-2.82 0-4.52 2.1-4.52 4.34 0 .86.33 1.78.74 2.28.08.1.09.18.06.28-.05.15-.17.65-.21.78-.04.18-.12.21-.26.13-1.04-.6-1.7-2.58-1.7-3.96 0-3.38 2.46-6.29 6.77-6.29 3.53 0 6.22 2.5 6.22 5.77 0 3.45-2.17 6.16-5.2 6.16-1.07 0-2.07-.53-2.42-1.13l-.6 2.27c-.24.87-1.05 2.07-1.57 2.71A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill-rule="evenodd"></path></svg></a>
+                    </div>
+                    <p class="text-sm text-center">© 2024 Vivek Yuv Seva Shakti. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
@@ -391,5 +277,39 @@
             once: true,
             offset: 100
         });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero Image Carousel
+        const carousel = document.getElementById('carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function showNext() {
+            // Hide current item
+            items[currentIndex].classList.remove('active');
+            items[currentIndex].style.opacity = 0;
+            
+            // Move to the next item
+            currentIndex = (currentIndex + 1) % items.length;
+            
+            // Show the new item
+            items[currentIndex].classList.add('active');
+            setTimeout(() => {
+                items[currentIndex].style.opacity = 1;
+            }, 50); // Small delay to ensure transition triggers correctly
+        }
+
+        // Set initial state
+        items[0].style.opacity = 1;
+        
+        // Change image every 5 seconds
+        setInterval(showNext, 5000);
     </script>
-</body></html>
+</body>
+</html>

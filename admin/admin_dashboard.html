@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
-<link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
-<link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vivek Yuv Seva Shakti - Admin Dashboard</title>
+    <link rel="icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <link rel="shortcut icon" type="image/jpeg" href="../assets/icon.jpeg">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -42,248 +43,178 @@
             },
         };
     </script>
-<style>
+    <style>
         /* On-load animations */
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .fade-in-down {
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-        
-        .scale-in {
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
+        .fade-in-up { animation: fadeInUp 1s ease-out; }
+        .fade-in-down { animation: fadeInDown 1s ease-out; }
+        .fade-in-left { animation: fadeInLeft 1s ease-out; }
+        .fade-in-right { animation: fadeInRight 1s ease-out; }
+        .scale-in { animation: scaleIn 0.8s ease-out; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
         /* Smooth transitions for interactive elements */
-        .smooth-transition {
-            transition: all 0.3s ease;
-        }
-        
-        /* Stagger animation delays */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
+        .smooth-transition { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="flex h-screen bg-background-light dark:bg-background-dark">
-<aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
-<div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
-<img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg"/>
-</div>
-<nav class="mt-6">
-<a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_dashboard.html">
-<span class="material-symbols-outlined mr-4">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_manage_events.html">
-<span class="material-symbols-outlined mr-4">event</span>
-<span>Manage Events</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
-<span class="material-symbols-outlined mr-4">photo_library</span>
-<span>Photo Gallery</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
-<span class="material-symbols-outlined mr-4">co_present</span>
-<span>Attendance</span>
-</a>
-<a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
-<span class="material-symbols-outlined mr-4">group</span>
-<span>Student Registrations</span>
-</a>
-</nav>
-<div class="absolute bottom-0 w-64 p-6">
-<a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
-<span class="material-symbols-outlined mr-4">logout</span>
-<span>Logout</span>
-</a>
-</div>
-</aside>
-<div class="flex-1 flex flex-col overflow-hidden">
-<header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
-<h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Admin Dashboard</h1>
-<div class="flex items-center space-x-4">
-<span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
-<img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB"/>
-</div>
-</header>
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6" data-aos="fade-up">
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="100">
-<div>
-<p class="text-sm text-gray-500 dark:text-gray-400">Total Students</p>
-<p class="text-3xl font-bold text-text-light dark:text-white">1,250</p>
-</div>
-<div class="bg-primary-DEFAULT/20 p-3 rounded-full">
-<span class="material-symbols-outlined text-primary-DEFAULT text-3xl">groups</span>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="200">
-<div>
-<p class="text-sm text-gray-500 dark:text-gray-400">Events This Month</p>
-<p class="text-3xl font-bold text-text-light dark:text-white">8</p>
-</div>
-<div class="bg-secondary/20 p-3 rounded-full">
-<span class="material-symbols-outlined text-secondary text-3xl">event</span>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="300">
-<div>
-<p class="text-sm text-gray-500 dark:text-gray-400">Attendance Rate</p>
-<p class="text-3xl font-bold text-text-light dark:text-white">92%</p>
-</div>
-<div class="bg-accent/20 p-3 rounded-full">
-<span class="material-symbols-outlined text-accent text-3xl">trending_up</span>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="400">
-<div>
-<p class="text-sm text-gray-500 dark:text-gray-400">Photos Uploaded</p>
-<p class="text-3xl font-bold text-text-light dark:text-white">543</p>
-</div>
-<div class="bg-blue-500/20 p-3 rounded-full">
-<span class="material-symbols-outlined text-blue-500 text-3xl">photo_camera</span>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<div class="lg:col-span-2 bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
-<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="200">Quick Actions</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<button class="w-full bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="300">
-<span class="material-symbols-outlined mr-2">add_circle</span>
-                            Add New Event
-                        </button>
-<button class="w-full bg-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="400">
-<span class="material-symbols-outlined mr-2">upload_file</span>
-                            Upload Photos
-                        </button>
-</div>
-<div class="mt-6">
-<h3 class="text-lg font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="500">Upcoming Events</h3>
-<ul class="space-y-3">
-<li class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg" data-aos="fade-up" data-aos-delay="600">
-<div>
-<p class="font-medium">Tree Plantation Drive</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">July 25, 2024</p>
-</div>
-<a class="text-primary-DEFAULT hover:underline" href="#">Manage</a>
-</li>
-<li class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg" data-aos="fade-up" data-aos-delay="700">
-<div>
-<p class="font-medium">Youth Leadership Workshop</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">August 5, 2024</p>
-</div>
-<a class="text-primary-DEFAULT hover:underline" href="#">Manage</a>
-</li>
-</ul>
-</div>
-</div>
-<div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
-<h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="300">Recent Student Registrations</h2>
-<ul class="space-y-4">
-<li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="400">
-<img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWPXWMvR5RdtrqzyAEECwTeb6J0sSnK48eWeedtEzxvBEKcpGnPK9OXDz6E0jVsIB2Sz2h2aLkFl4SqV_OknkM3ix-Q6w8kOJ9sLZ3SLrW44HNsF8j3a_taeUMBZd4aINSqN3UFufV7HTs64Qhl6H7ZjJ0dOtZwuwkirLBbr-Okx9Uh2V8Mm4AavZwfrVM8QFzHV1rLdihZCG-CrZJNhwl3BWjS7AvUZ-Q3l1NyUGjcevNNfRu0SiRl-V95evozf1MY_r41G8gBndP"/>
-<div>
-<p class="font-medium">Priya Sharma</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Registered: 2 hours ago</p>
-</div>
-</li>
-<li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="500">
-<img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo5-ENXdGRaL17_algi5fa1PIkeU5jIMwMpIj5zZ8mRhX_SzqjKqy_iWgrkjjX5PS_CgLQSJKzJMTAZsJgVTRmFD_zOj9c04S79F-W0e1hBGNQlY4xsLHNB_a0_gwfEqst0UljricAnnvqrLUyydG7cxrIm0OXUeR8ZKMotK-t4xk1Of1mhmWFNCi7ErA_uqVlqLNGAYHIjs0Uj1ts1dKtFbDY04X87gfgDPKu2C0SvdZdrOAFZcpuiCwDwaykcxF_YjhIWaXnz1xb"/>
-<div>
-<p class="font-medium">Rahul Verma</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Registered: 5 hours ago</p>
-</div>
-</li>
-<li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="600">
-<img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMpyZeyw275t8ov5QhLFxR7YiwILUhdaqlfqCLjbd_J5eQu0RHB9F4VTxJ_GS2rSaLwo3CDiFFSBB316uldx0IszsG4uogIKNEVmTR73GADupQuzVRolC-pS_b6wdkSNHU15QDnS1_fOKY6DJQ2fkpV_zLB2A4Mend17mtOfEMXeggo4XDEdfUNr0NfMS3TShnEFRy9BiTAHvKHTFiOGVUe0kXpExf1jpVS1XQSrL2FR7U-ip3KBjE-Y1rONIzQpWvLkw_a7_yK5I"/>
-<div>
-<p class="font-medium">Anjali Singh</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Registered: 1 day ago</p>
-</div>
-</li>
-</ul>
-<button class="w-full mt-6 bg-transparent border border-primary-DEFAULT text-primary-DEFAULT font-semibold py-2 px-4 rounded-lg hover:bg-primary-DEFAULT hover:text-white transition duration-300 smooth-transition" data-aos="fade-up" data-aos-delay="700">
-                        View All Registrations
-                    </button>
-</div>
-</div>
-</main>
-</div>
-</div>
+    <div class="flex h-screen bg-background-light dark:bg-background-dark">
+        <aside class="w-64 flex-shrink-0 bg-secondary-light dark:bg-secondary-dark shadow-lg fade-in-left">
+            <div class="flex items-center justify-center h-20 border-b border-gray-200 dark:border-gray-700 border-r border-gray-300 dark:border-gray-600">
+                <img alt="Vivek Yuv Seva Shakti Logo" class="h-14 w-auto" src="../assets/icon.jpeg" />
+            </div>
+            <nav class="mt-6">
+                <a class="flex items-center px-6 py-3 text-primary-DEFAULT bg-primary-DEFAULT/10 dark:bg-primary-DEFAULT/20 border-l-4 border-primary-DEFAULT" href="admin_dashboard.html">
+                    <span class="material-symbols-outlined mr-4">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_manage_events.html">
+                    <span class="material-symbols-outlined mr-4">event</span>
+                    <span>Manage Events</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_event_photo-gallery.html">
+                    <span class="material-symbols-outlined mr-4">photo_library</span>
+                    <span>Photo Gallery</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_attendance.html">
+                    <span class="material-symbols-outlined mr-4">co_present</span>
+                    <span>Attendance</span>
+                </a>
+                <a class="flex items-center px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="admin_student_registerations.html">
+                    <span class="material-symbols-outlined mr-4">group</span>
+                    <span>Student Registrations</span>
+                </a>
+            </nav>
+            <div class="absolute bottom-0 w-64 p-6">
+                <a class="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary-DEFAULT" href="#">
+                    <span class="material-symbols-outlined mr-4">logout</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="flex items-center justify-between h-20 px-6 border-b border-gray-200 dark:border-gray-700 bg-secondary-light dark:bg-secondary-dark fade-in-down">
+                <h1 class="text-2xl font-semibold text-text-light dark:text-text-dark" data-aos="fade-up">Admin Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 dark:text-gray-300">Welcome, Admin</span>
+                    <img alt="Admin Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg14aZ9sSsjlMrygaUfrMVbU1IX9BfGbT6eI2lzI91IGu6FDBWr6wZLdjV2GEdb3bR9NzTD2m7P05w-ZZ9jHG5YfcTiEYHOOY7Ei3DS6j1VdH-WbNDdy4Gd6tkYZXsms8M45NKh4IchsXMWsTTNNa-gYP67wp21_E7fwCkDpRU0djWDEZQW2Y_fIIt0_bMlqj5iSiw47NaOHfO5Oj2QLXWJqSkPcFQlJXUGYlLKRrEqrs0ETkLNfJY0Venzl5fX4riAdvJK_sqw1sB" />
+                </div>
+            </header>
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-background-light dark:bg-background-dark p-6 fade-in-right">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6" data-aos="fade-up">
+                    <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Total Students</p>
+                            <p class="text-3xl font-bold text-text-light dark:text-white">1,250</p>
+                        </div>
+                        <div class="bg-primary-DEFAULT/20 p-3 rounded-full">
+                            <span class="material-symbols-outlined text-primary-DEFAULT text-3xl">groups</span>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="200">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Events This Month</p>
+                            <p class="text-3xl font-bold text-text-light dark:text-white">8</p>
+                        </div>
+                        <div class="bg-secondary/20 p-3 rounded-full">
+                            <span class="material-symbols-outlined text-secondary text-3xl">event</span>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="300">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Attendance Rate</p>
+                            <p class="text-3xl font-bold text-text-light dark:text-white">92%</p>
+                        </div>
+                        <div class="bg-accent/20 p-3 rounded-full">
+                            <span class="material-symbols-outlined text-accent text-3xl">trending_up</span>
+                        </div>
+                    </div>
+                    <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md flex items-center justify-between" data-aos="fade-up" data-aos-delay="400">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Photos Uploaded</p>
+                            <p class="text-3xl font-bold text-text-light dark:text-white">543</p>
+                        </div>
+                        <div class="bg-blue-500/20 p-3 rounded-full">
+                            <span class="material-symbols-outlined text-blue-500 text-3xl">photo_camera</span>
+                        </div>
+                    </div>
+                </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="200">Quick Actions</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button class="w-full bg-primary-hover text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-primary-DEFAULT transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="300">
+                                <span class="material-symbols-outlined mr-2">add_circle</span>
+                                Add New Event
+                            </button>
+                            <button class="w-full bg-secondary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-secondary/80 transition duration-300 flex items-center justify-center smooth-transition" data-aos="fade-up" data-aos-delay="400">
+                                <span class="material-symbols-outlined mr-2">upload_file</span>
+                                Upload Photos
+                            </button>
+                        </div>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="500">Upcoming Events</h3>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                                    <div>
+                                        <p class="font-medium">Tree Plantation Drive</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">July 25, 2024</p>
+                                    </div>
+                                    <a class="text-primary-DEFAULT hover:underline" href="#">Manage</a>
+                                </li>
+                                <li class="flex justify-between items-center p-3 bg-background-light dark:bg-background-dark rounded-lg" data-aos="fade-up" data-aos-delay="700">
+                                    <div>
+                                        <p class="font-medium">Youth Leadership Workshop</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">August 5, 2024</p>
+                                    </div>
+                                    <a class="text-primary-DEFAULT hover:underline" href="#">Manage</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="text-xl font-semibold mb-4 text-text-light dark:text-white" data-aos="fade-up" data-aos-delay="300">Recent Student Registrations</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="400">
+                                <img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWPXWMvR5RdtrqzyAEECwTeb6J0sSnK48eWeedtEzxvBEKcpGnPK9OXDz6E0jVsIB2Sz2h2aLkFl4SqV_OknkM3ix-Q6w8kOJ9sLZ3SLrW44HNsF8j3a_taeUMBZd4aINSqN3UFufV7HTs64Qhl6H7ZjJ0dOtZwuwkirLBbr-Okx9Uh2V8Mm4AavZwfrVM8QFzHV1rLdihZCG-CrZJNhwl3BWjS7AvUZ-Q3l1NyUGjcevNNfRu0SiRl-V95evozf1MY_r41G8gBndP" />
+                                <div>
+                                    <p class="font-medium">Priya Sharma</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Registered: 2 hours ago</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="500">
+                                <img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo5-ENXdGRaL17_algi5fa1PIkeU5jIMwMpIj5zZ8mRhX_SzqjKqy_iWgrkjjX5PS_CgLQSJKzJMTAZsJgVTRmFD_zOj9c04S79F-W0e1hBGNQlY4xsLHNB_a0_gwfEqst0UljricAnnvqrLUyydG7cxrIm0OXUeR8ZKMotK-t4xk1Of1mhmWFNCi7ErA_uqVlqLNGAYHIjs0Uj1ts1dKtFbDY04X87gfgDPKu2C0SvdZdrOAFZcpuiCwDwaykcxF_YjhIWaXnz1xb" />
+                                <div>
+                                    <p class="font-medium">Rahul Verma</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Registered: 5 hours ago</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center space-x-4" data-aos="fade-up" data-aos-delay="600">
+                                <img alt="Student Avatar" class="h-10 w-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMpyZeyw275t8ov5QhLFxR7YiwILUhdaqlfqCLjbd_J5eQu0RHB9F4VTxJ_GS2rSaLwo3CDiFFSBB316uldx0IszsG4uogIKNEVmTR73GADupQuzVRolC-pS_b6wdkSNHU15QDnS1_fOKY6DJQ2fkpV_zLB2A4Mend17mtOfEMXeggo4XDEdfUNr0NfMS3TShnEFRy9BiTAHvKHTFiOGVUe0kXpExf1jpVS1XQSrL2FR7U-ip3KBjE-Y1rONIzQpWvLkw_a7_yK5I" />
+                                <div>
+                                    <p class="font-medium">Anjali Singh</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Registered: 1 day ago</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="w-full mt-6 bg-transparent border border-primary-DEFAULT text-primary-DEFAULT font-semibold py-2 px-4 rounded-lg hover:bg-primary-DEFAULT hover:text-white transition duration-300 smooth-transition" data-aos="fade-up" data-aos-delay="700">
+                            View All Registrations
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
@@ -292,4 +223,5 @@
             offset: 100
         });
     </script>
-</body></html>
+</body>
+</html>
